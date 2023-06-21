@@ -15,8 +15,8 @@
             "Sequence__c": 1,
             "Show_Close_Button__c": true,
             "Show_Next_Button__c": false,
-            "OffsetX__c" : 10,
-            "OffsetY__c": 10,
+            "OffsetX__c" : 50,
+            "OffsetY__c": 50,
             "Name": "Waffle Menu"
         },
         {
@@ -34,8 +34,8 @@
             "Sequence__c": 1,
             "Show_Close_Button__c": false,
             "Show_Next_Button__c": true,
-            "OffsetX__c": 13,
-            "OffsetY__c": 20,
+            "OffsetX__c": 50,
+            "OffsetY__c": 50,
             "Name": "Navigation Tabs"
         },
         {
@@ -69,6 +69,8 @@
             "Sequence__c": 1,
             "Show_Close_Button__c": true,
             "Show_Next_Button__c": false,
+            "OffsetX__c": 50,
+            "OffsetY__c": 50,
             "Name": "Related Lists"
         },
         {
@@ -85,8 +87,8 @@
             "Sequence__c": 1,
             "Show_Close_Button__c": true,
             "Show_Next_Button__c": false,
-            "OffsetX__c": -50,
-            "OffsetY__c": 85,
+            "OffsetX__c": 50,
+            "OffsetY__c": 50,
             "Name": "Custom Actions"
         },
         {
@@ -103,8 +105,8 @@
             "Sequence__c": 1,
             "Show_Close_Button__c": false,
             "Show_Next_Button__c": true,
-            "OffsetX__c": -70,
-            "OffsetY__c": -266,
+            "OffsetX__c": 50,
+            "OffsetY__c": 50,
             "Name": "Lightning Components"
         },
         {
@@ -121,8 +123,8 @@
             "Sequence__c": 2,
             "Show_Close_Button__c": true,
             "Show_Next_Button__c": false,
-            "OffsetX__c": -70,
-            "OffsetY__c": -266,
+            "OffsetX__c": 50,
+            "OffsetY__c": 50,
             "Name": "Lightning Components 2"
         },
         {
