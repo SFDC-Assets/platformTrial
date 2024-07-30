@@ -2,7 +2,6 @@
   "orgName": "platform-trial",
   "adminEmail": "platformpmmdemos@gmail.com",
   "description": "public trial org",
-  "template": "0TT6A000006BlTd",
   "settings": {
     "lightningExperienceSettings": {
       "enableS1DesktopEnabled": true
