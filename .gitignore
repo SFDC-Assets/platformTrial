@@ -1,6 +1,7 @@
 PlatformTrial.sublime-project
 PlatformTrial.sublime-workspace
 .sfdx/*
+.sf/*
 
 .classpath
 .DS_Store
