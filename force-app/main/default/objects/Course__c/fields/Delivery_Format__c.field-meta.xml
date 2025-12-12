@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Delivery_Format__c</fullName>
+    <description>Primary delivery format for the course.</description>
+    <externalId>false</externalId>
+    <label>Delivery Format</label>
+    <type>Picklist</type>
+    <valueSet>
+        <valueSetDefinition>
+            <sorted>true</sorted>
+            <value>
+                <fullName>In Person</fullName>
+                <default>false</default>
+                <label>In Person</label>
+            </value>
+            <value>
+                <fullName>Virtual Live</fullName>
+                <default>false</default>
+                <label>Virtual Live</label>
+            </value>
+            <value>
+                <fullName>On Demand</fullName>
+                <default>false</default>
+                <label>On Demand</label>
+            </value>
+            <value>
+                <fullName>Hybrid</fullName>
+                <default>false</default>
+                <label>Hybrid</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

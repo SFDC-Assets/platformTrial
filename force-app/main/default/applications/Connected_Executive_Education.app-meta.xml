@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <logo>ConnectedExecutiveEducationLogo</logo>
+    <formFactors>Large</formFactors>
+    <formFactors>Small</formFactors>
+    <description>Learning Management workspace for managing courses, students, and enrollments.</description>
+    <label>Learning Management</label>
+    <navType>Standard</navType>
+    <tabs>Free_Trial_Guide</tabs>
+    <tabs>Learning_Management</tabs>
+    <tabs>Course__c</tabs>
+    <tabs>Student__c</tabs>
+    <tabs>Enrollment__c</tabs>
+    <uiType>Lightning</uiType>
+</CustomApplication>

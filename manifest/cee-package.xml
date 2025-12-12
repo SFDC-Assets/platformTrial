@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>Connected_Executive_Education</members>
+        <name>CustomApplication</name>
+    </types>
+    <types>
+        <members>Course__c</members>
+        <members>Enrollment__c</members>
+        <members>Student__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>Course__c-Course Layout</members>
+        <members>Enrollment__c-Enrollment Layout</members>
+        <members>Student__c-Student Layout</members>
+        <name>Layout</name>
+    </types>
+    <types>
+        <members>LearningManagementController</members>
+        <members>LearningManagementControllerTest</members>
+        <members>CourseLookupAction</members>
+        <members>StudentLookupAction</members>
+        <members>EnrollmentLookupAction</members>
+        <name>ApexClass</name>
+    </types>
+    <types>
+        <members>learningManagementDashboard</members>
+        <name>LightningComponentBundle</name>
+    </types>
+    <types>
+        <members>Learning_Management</members>
+        <members>Course__c</members>
+        <members>Enrollment__c</members>
+        <members>Student__c</members>
+        <name>CustomTab</name>
+    </types>
+    <types>
+        <members>ConnectedExecutiveEducationLogo</members>
+        <name>StaticResource</name>
+    </types>
+    <types>
+        <members>ConnectedExecutiveEducationAccess</members>
+        <name>PermissionSet</name>
+    </types>
+    <version>60.0</version>
+</Package>
+

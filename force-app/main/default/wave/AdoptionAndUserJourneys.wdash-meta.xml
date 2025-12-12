@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WaveDashboard xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <content xsi:nil="true"/>
+    <application>EM_Metrics</application>
+    <dateVersion>1</dateVersion>
+    <description>Gain insights into user activity, including views and clicks, across various applications, standard and custom objects, and page components</description>
+    <masterLabel>Adoption and User Journeys (Beta)</masterLabel>
+    <templateAssetSourceName>AdoptionAndUserJourneys</templateAssetSourceName>
+</WaveDashboard>

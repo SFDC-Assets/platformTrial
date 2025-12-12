@@ -1,0 +1,136 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Course__c",
+                "referenceId": "CourseRef1"
+            },
+            "Title__c": "Executive Leadership Fundamentals",
+            "Category__c": "Leadership",
+            "Duration_Hours__c": 16,
+            "Delivery_Format__c": "In-Person",
+            "Description__c": "A comprehensive program designed to develop core leadership competencies for senior executives. Covers strategic thinking, team management, and organizational transformation."
+        },
+        {
+            "attributes": {
+                "type": "Course__c",
+                "referenceId": "CourseRef2"
+            },
+            "Title__c": "Digital Transformation Strategy",
+            "Category__c": "Technology",
+            "Duration_Hours__c": 12,
+            "Delivery_Format__c": "Hybrid",
+            "Description__c": "Learn how to lead digital transformation initiatives in your organization. Explore emerging technologies, change management, and innovation frameworks."
+        },
+        {
+            "attributes": {
+                "type": "Course__c",
+                "referenceId": "CourseRef3"
+            },
+            "Title__c": "Financial Management for Non-Financial Executives",
+            "Category__c": "Finance",
+            "Duration_Hours__c": 8,
+            "Delivery_Format__c": "Online",
+            "Description__c": "Essential financial concepts and tools for executives without a finance background. Learn to read financial statements, manage budgets, and make data-driven decisions."
+        },
+        {
+            "attributes": {
+                "type": "Course__c",
+                "referenceId": "CourseRef4"
+            },
+            "Title__c": "Strategic Innovation and Design Thinking",
+            "Category__c": "Innovation",
+            "Duration_Hours__c": 14,
+            "Delivery_Format__c": "In-Person",
+            "Description__c": "Master design thinking methodologies to drive innovation in your organization. Hands-on workshops and real-world case studies."
+        },
+        {
+            "attributes": {
+                "type": "Course__c",
+                "referenceId": "CourseRef5"
+            },
+            "Title__c": "Global Business Strategy",
+            "Category__c": "Strategy",
+            "Duration_Hours__c": 20,
+            "Delivery_Format__c": "Hybrid",
+            "Description__c": "Develop strategies for competing in global markets. Covers market entry, cross-cultural management, and international partnerships."
+        },
+        {
+            "attributes": {
+                "type": "Course__c",
+                "referenceId": "CourseRef6"
+            },
+            "Title__c": "AI and Machine Learning for Business Leaders",
+            "Category__c": "Technology",
+            "Duration_Hours__c": 10,
+            "Delivery_Format__c": "Online",
+            "Description__c": "Understand AI fundamentals and how to leverage machine learning in your organization. No technical background required."
+        },
+        {
+            "attributes": {
+                "type": "Course__c",
+                "referenceId": "CourseRef7"
+            },
+            "Title__c": "Change Management Excellence",
+            "Category__c": "Leadership",
+            "Duration_Hours__c": 12,
+            "Delivery_Format__c": "Hybrid",
+            "Description__c": "Lead organizational change effectively. Learn proven frameworks for managing resistance and driving adoption."
+        },
+        {
+            "attributes": {
+                "type": "Course__c",
+                "referenceId": "CourseRef8"
+            },
+            "Title__c": "Data-Driven Decision Making",
+            "Category__c": "Analytics",
+            "Duration_Hours__c": 8,
+            "Delivery_Format__c": "Online",
+            "Description__c": "Transform your decision-making process with data analytics. Learn to interpret data, build dashboards, and drive insights."
+        },
+        {
+            "attributes": {
+                "type": "Course__c",
+                "referenceId": "CourseRef9"
+            },
+            "Title__c": "Negotiation and Influence",
+            "Category__c": "Leadership",
+            "Duration_Hours__c": 6,
+            "Delivery_Format__c": "In-Person",
+            "Description__c": "Master the art of negotiation and learn to influence stakeholders effectively. Practical exercises and role-playing scenarios."
+        },
+        {
+            "attributes": {
+                "type": "Course__c",
+                "referenceId": "CourseRef10"
+            },
+            "Title__c": "Cybersecurity for Executives",
+            "Category__c": "Technology",
+            "Duration_Hours__c": 8,
+            "Delivery_Format__c": "Online",
+            "Description__c": "Understand cybersecurity risks and governance. Learn to protect your organization and respond to security incidents."
+        },
+        {
+            "attributes": {
+                "type": "Course__c",
+                "referenceId": "CourseRef11"
+            },
+            "Title__c": "Sustainable Business Practices",
+            "Category__c": "Strategy",
+            "Duration_Hours__c": 10,
+            "Delivery_Format__c": "Hybrid",
+            "Description__c": "Integrate sustainability into your business strategy. ESG frameworks, carbon footprint reduction, and stakeholder engagement."
+        },
+        {
+            "attributes": {
+                "type": "Course__c",
+                "referenceId": "CourseRef12"
+            },
+            "Title__c": "Agile Project Management",
+            "Category__c": "Operations",
+            "Duration_Hours__c": 16,
+            "Delivery_Format__c": "In-Person",
+            "Description__c": "Master Agile methodologies including Scrum and Kanban. Learn to deliver projects faster with higher quality."
+        }
+    ]
+}

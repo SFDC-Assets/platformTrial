@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WaveDashboard xmlns="http://soap.sforce.com/2006/04/metadata" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <content xsi:nil="true"/>
+    <application>EM_Metrics</application>
+    <dateVersion>1</dateVersion>
+    <description>Gain detailed insights into detected threats and user access</description>
+    <masterLabel>Threats and Access (Beta)</masterLabel>
+    <templateAssetSourceName>ThreatsAndAccess</templateAssetSourceName>
+</WaveDashboard>

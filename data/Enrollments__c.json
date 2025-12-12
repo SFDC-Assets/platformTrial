@@ -1,0 +1,394 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Enrollment__c",
+                "referenceId": "EnrollmentRef1"
+            },
+            "Student__c": "@StudentRef1",
+            "Course__c": "@CourseRef1",
+            "Status__c": "In Progress",
+            "Progress__c": 65,
+            "Enrollment_Date__c": "2024-01-15",
+            "Expected_Completion_Date__c": "2024-03-15",
+            "Notes__c": "Excellent progress. Student actively participating in all sessions."
+        },
+        {
+            "attributes": {
+                "type": "Enrollment__c",
+                "referenceId": "EnrollmentRef2"
+            },
+            "Student__c": "@StudentRef1",
+            "Course__c": "@CourseRef2",
+            "Status__c": "Completed",
+            "Progress__c": 100,
+            "Enrollment_Date__c": "2023-11-01",
+            "Expected_Completion_Date__c": "2023-12-15",
+            "Notes__c": "Successfully completed with distinction. Recommended for advanced program."
+        },
+        {
+            "attributes": {
+                "type": "Enrollment__c",
+                "referenceId": "EnrollmentRef3"
+            },
+            "Student__c": "@StudentRef2",
+            "Course__c": "@CourseRef3",
+            "Status__c": "In Progress",
+            "Progress__c": 45,
+            "Enrollment_Date__c": "2024-02-01",
+            "Expected_Completion_Date__c": "2024-03-30",
+            "Notes__c": "Making steady progress. Additional support materials provided."
+        },
+        {
+            "attributes": {
+                "type": "Enrollment__c",
+                "referenceId": "EnrollmentRef4"
+            },
+            "Student__c": "@StudentRef2",
+            "Course__c": "@CourseRef5",
+            "Status__c": "Enrolled",
+            "Progress__c": 0,
+            "Enrollment_Date__c": "2024-03-01",
+            "Expected_Completion_Date__c": "2024-05-15",
+            "Notes__c": "New enrollment. Course starts next week."
+        },
+        {
+            "attributes": {
+                "type": "Enrollment__c",
+                "referenceId": "EnrollmentRef5"
+            },
+            "Student__c": "@StudentRef3",
+            "Course__c": "@CourseRef4",
+            "Status__c": "In Progress",
+            "Progress__c": 80,
+            "Enrollment_Date__c": "2024-01-20",
+            "Expected_Completion_Date__c": "2024-03-20",
+            "Notes__c": "Outstanding performance. Leading innovation project discussions."
+        },
+        {
+            "attributes": {
+                "type": "Enrollment__c",
+                "referenceId": "EnrollmentRef6"
+            },
+            "Student__c": "@StudentRef3",
+            "Course__c": "@CourseRef2",
+            "Status__c": "Completed",
+            "Progress__c": 100,
+            "Enrollment_Date__c": "2023-10-15",
+            "Expected_Completion_Date__c": "2023-12-01",
+            "Notes__c": "Completed ahead of schedule. Exceptional work on final project."
+        },
+        {
+            "attributes": {
+                "type": "Enrollment__c",
+                "referenceId": "EnrollmentRef7"
+            },
+            "Student__c": "@StudentRef4",
+            "Course__c": "@CourseRef1",
+            "Status__c": "In Progress",
+            "Progress__c": 30,
+            "Enrollment_Date__c": "2024-02-15",
+            "Expected_Completion_Date__c": "2024-04-30",
+            "Notes__c": "Early stage. Student engaged and asking thoughtful questions."
+        },
+        {
+            "attributes": {
+                "type": "Enrollment__c",
+                "referenceId": "EnrollmentRef8"
+            },
+            "Student__c": "@StudentRef5",
+            "Course__c": "@CourseRef5",
+            "Status__c": "In Progress",
+            "Progress__c": 55,
+            "Enrollment_Date__c": "2024-01-10",
+            "Expected_Completion_Date__c": "2024-03-25",
+            "Notes__c": "Strong performance in global strategy modules."
+        },
+        {
+            "attributes": {
+                "type": "Enrollment__c",
+                "referenceId": "EnrollmentRef9"
+            },
+            "Student__c": "@StudentRef6",
+            "Course__c": "@CourseRef3",
+            "Status__c": "Completed",
+            "Progress__c": 100,
+            "Enrollment_Date__c": "2023-12-01",
+            "Expected_Completion_Date__c": "2024-01-15",
+            "Notes__c": "Completed successfully. Applied learnings to company budget planning."
+        },
+        {
+            "attributes": {
+                "type": "Enrollment__c",
+                "referenceId": "EnrollmentRef10"
+            },
+            "Student__c": "@StudentRef6",
+            "Course__c": "@CourseRef4",
+            "Status__c": "Enrolled",
+            "Progress__c": 0,
+            "Enrollment_Date__c": "2024-03-05",
+            "Expected_Completion_Date__c": "2024-05-20",
+            "Notes__c": "Upcoming enrollment. Pre-course materials sent."
+        },
+        {
+            "attributes": {
+                "type": "Enrollment__c",
+                "referenceId": "EnrollmentRef11"
+            },
+            "Student__c": "@StudentRef7",
+            "Course__c": "@CourseRef6",
+            "Status__c": "In Progress",
+            "Progress__c": 70,
+            "Enrollment_Date__c": "2024-01-08",
+            "Expected_Completion_Date__c": "2024-02-28",
+            "Notes__c": "Highly engaged with AI content. Implementing learnings in real-time."
+        },
+        {
+            "attributes": {
+                "type": "Enrollment__c",
+                "referenceId": "EnrollmentRef12"
+            },
+            "Student__c": "@StudentRef7",
+            "Course__c": "@CourseRef7",
+            "Status__c": "Completed",
+            "Progress__c": 100,
+            "Enrollment_Date__c": "2023-09-15",
+            "Expected_Completion_Date__c": "2023-11-30",
+            "Notes__c": "Excellent completion. Led company-wide change initiative using course frameworks."
+        },
+        {
+            "attributes": {
+                "type": "Enrollment__c",
+                "referenceId": "EnrollmentRef13"
+            },
+            "Student__c": "@StudentRef8",
+            "Course__c": "@CourseRef8",
+            "Status__c": "In Progress",
+            "Progress__c": 90,
+            "Enrollment_Date__c": "2024-01-05",
+            "Expected_Completion_Date__c": "2024-02-20",
+            "Notes__c": "Near completion. Building executive dashboard as capstone project."
+        },
+        {
+            "attributes": {
+                "type": "Enrollment__c",
+                "referenceId": "EnrollmentRef14"
+            },
+            "Student__c": "@StudentRef8",
+            "Course__c": "@CourseRef6",
+            "Status__c": "Enrolled",
+            "Progress__c": 15,
+            "Enrollment_Date__c": "2024-02-20",
+            "Expected_Completion_Date__c": "2024-04-15",
+            "Notes__c": "Just started. Strong technical background will accelerate progress."
+        },
+        {
+            "attributes": {
+                "type": "Enrollment__c",
+                "referenceId": "EnrollmentRef15"
+            },
+            "Student__c": "@StudentRef9",
+            "Course__c": "@CourseRef10",
+            "Status__c": "In Progress",
+            "Progress__c": 50,
+            "Enrollment_Date__c": "2024-01-22",
+            "Expected_Completion_Date__c": "2024-03-22",
+            "Notes__c": "Implementing security improvements based on course content."
+        },
+        {
+            "attributes": {
+                "type": "Enrollment__c",
+                "referenceId": "EnrollmentRef16"
+            },
+            "Student__c": "@StudentRef9",
+            "Course__c": "@CourseRef12",
+            "Status__c": "Completed",
+            "Progress__c": 100,
+            "Enrollment_Date__c": "2023-10-01",
+            "Expected_Completion_Date__c": "2023-12-15",
+            "Notes__c": "Transformed engineering team to Agile. Productivity up 40%."
+        },
+        {
+            "attributes": {
+                "type": "Enrollment__c",
+                "referenceId": "EnrollmentRef17"
+            },
+            "Student__c": "@StudentRef10",
+            "Course__c": "@CourseRef3",
+            "Status__c": "In Progress",
+            "Progress__c": 60,
+            "Enrollment_Date__c": "2024-01-18",
+            "Expected_Completion_Date__c": "2024-03-18",
+            "Notes__c": "Applying financial analysis to portfolio companies."
+        },
+        {
+            "attributes": {
+                "type": "Enrollment__c",
+                "referenceId": "EnrollmentRef18"
+            },
+            "Student__c": "@StudentRef10",
+            "Course__c": "@CourseRef11",
+            "Status__c": "Enrolled",
+            "Progress__c": 10,
+            "Enrollment_Date__c": "2024-02-25",
+            "Expected_Completion_Date__c": "2024-05-01",
+            "Notes__c": "ESG focus for portfolio evaluation criteria."
+        },
+        {
+            "attributes": {
+                "type": "Enrollment__c",
+                "referenceId": "EnrollmentRef19"
+            },
+            "Student__c": "@StudentRef11",
+            "Course__c": "@CourseRef11",
+            "Status__c": "In Progress",
+            "Progress__c": 85,
+            "Enrollment_Date__c": "2024-01-02",
+            "Expected_Completion_Date__c": "2024-02-28",
+            "Notes__c": "Passionate about sustainability. Leading class discussions."
+        },
+        {
+            "attributes": {
+                "type": "Enrollment__c",
+                "referenceId": "EnrollmentRef20"
+            },
+            "Student__c": "@StudentRef11",
+            "Course__c": "@CourseRef1",
+            "Status__c": "Completed",
+            "Progress__c": 100,
+            "Enrollment_Date__c": "2023-08-15",
+            "Expected_Completion_Date__c": "2023-10-30",
+            "Notes__c": "Outstanding leadership. Now mentoring other students."
+        },
+        {
+            "attributes": {
+                "type": "Enrollment__c",
+                "referenceId": "EnrollmentRef21"
+            },
+            "Student__c": "@StudentRef12",
+            "Course__c": "@CourseRef10",
+            "Status__c": "In Progress",
+            "Progress__c": 75,
+            "Enrollment_Date__c": "2024-01-12",
+            "Expected_Completion_Date__c": "2024-03-12",
+            "Notes__c": "Implementing enterprise risk framework based on course content."
+        },
+        {
+            "attributes": {
+                "type": "Enrollment__c",
+                "referenceId": "EnrollmentRef22"
+            },
+            "Student__c": "@StudentRef12",
+            "Course__c": "@CourseRef3",
+            "Status__c": "Completed",
+            "Progress__c": 100,
+            "Enrollment_Date__c": "2023-11-15",
+            "Expected_Completion_Date__c": "2024-01-15",
+            "Notes__c": "Deep financial expertise. Contributed valuable insights to class."
+        },
+        {
+            "attributes": {
+                "type": "Enrollment__c",
+                "referenceId": "EnrollmentRef23"
+            },
+            "Student__c": "@StudentRef13",
+            "Course__c": "@CourseRef4",
+            "Status__c": "In Progress",
+            "Progress__c": 40,
+            "Enrollment_Date__c": "2024-02-01",
+            "Expected_Completion_Date__c": "2024-04-15",
+            "Notes__c": "Applying design thinking to product roadmap development."
+        },
+        {
+            "attributes": {
+                "type": "Enrollment__c",
+                "referenceId": "EnrollmentRef24"
+            },
+            "Student__c": "@StudentRef13",
+            "Course__c": "@CourseRef9",
+            "Status__c": "Enrolled",
+            "Progress__c": 0,
+            "Enrollment_Date__c": "2024-03-10",
+            "Expected_Completion_Date__c": "2024-04-20",
+            "Notes__c": "Upcoming enrollment for stakeholder management skills."
+        },
+        {
+            "attributes": {
+                "type": "Enrollment__c",
+                "referenceId": "EnrollmentRef25"
+            },
+            "Student__c": "@StudentRef14",
+            "Course__c": "@CourseRef2",
+            "Status__c": "In Progress",
+            "Progress__c": 55,
+            "Enrollment_Date__c": "2024-01-25",
+            "Expected_Completion_Date__c": "2024-03-25",
+            "Notes__c": "Leading digital transformation at RetailMax. Course directly applicable."
+        },
+        {
+            "attributes": {
+                "type": "Enrollment__c",
+                "referenceId": "EnrollmentRef26"
+            },
+            "Student__c": "@StudentRef14",
+            "Course__c": "@CourseRef6",
+            "Status__c": "Completed",
+            "Progress__c": 100,
+            "Enrollment_Date__c": "2023-10-20",
+            "Expected_Completion_Date__c": "2023-12-20",
+            "Notes__c": "Implemented AI-powered customer analytics after course completion."
+        },
+        {
+            "attributes": {
+                "type": "Enrollment__c",
+                "referenceId": "EnrollmentRef27"
+            },
+            "Student__c": "@StudentRef15",
+            "Course__c": "@CourseRef12",
+            "Status__c": "In Progress",
+            "Progress__c": 35,
+            "Enrollment_Date__c": "2024-02-10",
+            "Expected_Completion_Date__c": "2024-04-30",
+            "Notes__c": "Transforming logistics operations to Agile methodology."
+        },
+        {
+            "attributes": {
+                "type": "Enrollment__c",
+                "referenceId": "EnrollmentRef28"
+            },
+            "Student__c": "@StudentRef15",
+            "Course__c": "@CourseRef5",
+            "Status__c": "Enrolled",
+            "Progress__c": 5,
+            "Enrollment_Date__c": "2024-03-01",
+            "Expected_Completion_Date__c": "2024-06-01",
+            "Notes__c": "Expanding into international markets. Course timing perfect."
+        },
+        {
+            "attributes": {
+                "type": "Enrollment__c",
+                "referenceId": "EnrollmentRef29"
+            },
+            "Student__c": "@StudentRef1",
+            "Course__c": "@CourseRef6",
+            "Status__c": "Enrolled",
+            "Progress__c": 20,
+            "Enrollment_Date__c": "2024-02-28",
+            "Expected_Completion_Date__c": "2024-04-28",
+            "Notes__c": "Building on digital transformation knowledge with AI focus."
+        },
+        {
+            "attributes": {
+                "type": "Enrollment__c",
+                "referenceId": "EnrollmentRef30"
+            },
+            "Student__c": "@StudentRef4",
+            "Course__c": "@CourseRef9",
+            "Status__c": "Completed",
+            "Progress__c": 100,
+            "Enrollment_Date__c": "2023-09-01",
+            "Expected_Completion_Date__c": "2023-10-15",
+            "Notes__c": "Negotiated major partnership deal using course techniques."
+        }
+    ]
+}

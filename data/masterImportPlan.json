@@ -1,58 +1,27 @@
 [
     {
-        "sobject": "Account",
+        "sobject": "Course__c",
         "saveRefs": true,
         "resolveRefs": false,
         "files": [
-            "Accounts.json"
+            "Courses__c.json"
         ]
     },
     {
-        "sobject": "Contact",
-        "saveRefs": false,
-        "resolveRefs": true,
-        "files": [
-            "Contacts.json"
-        ]
-    },
-    {
-        "sobject": "Mission__c",
-        "saveRefs": false,
-        "resolveRefs": true,
-        "files": [
-            "Mission__cs.json"
-        ]
-    },
-    {
-        "sobject": "Trial_Activity__c",
+        "sobject": "Student__c",
         "saveRefs": true,
         "resolveRefs": false,
         "files": [
-            "Trial_Activity__cs.json"
+            "Students__c.json"
         ]
     },
     {
-        "sobject": "Path_Activity__c",
-        "saveRefs": true,
-        "resolveRefs": false,
-        "files": [
-            "Path_Activity__cs.json"
-        ]
-    },
-    {
-        "sobject": "Walkthrough__c",
+        "sobject": "Enrollment__c",
         "saveRefs": false,
         "resolveRefs": true,
         "files": [
-            "Walkthrough__cs.json"
-        ]
-    },
-    {
-        "sobject": "Walkthrough__c",
-        "saveRefs": false,
-        "resolveRefs": false,
-        "files": [
-            "orphan-Walkthrough__cs.json"
+            "Enrollments__c.json"
         ]
     }
 ]
+

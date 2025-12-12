@@ -1,29 +1,34 @@
-sfdx force:org:create -s -f config/project-scratch-def.json -d 30 --wait 60
-sfdx force:source:push
+#!/bin/bash
 
-sfdx force:user:permset:assign -n TrialAdmin
-# sfdx force:apex:execute -f SetupScripting/apexDeletions.cls
-sfdx force:data:tree:import -p data/masterImportPlan.json
+# Create scratch org (use default dev hub or specify with -v flag)
+#sf org create scratch --definition-file config/project-scratch-def.json --duration-days 30 --wait 60 --target-dev-hub alm_demo_hub_org_2 --set-default --alias cee-scratch-4
+sf org create scratch --definition-file config/project-scratch-def.json --duration-days 30 --wait 60
 
-sfdx force:apex:execute -f SetupScripting/urlSetup.cls
-sfdx force:org:open -p one/one.app#/n/Start
+# Deploy source (excluding Wave apps and dashboards - they need permissions first)
+sf project deploy start
 
-sfdx force:user:create -f config/userDef/cloudy-user-def.json
-sfdx shane:user:photo -f assets/cloudy-profile.png -l Cloudy
-sfdx force:user:create -f config/userDef/codey-user-def.json
-sfdx shane:user:photo -f assets/codey-profile.png  -l CodeBear
-sfdx force:user:create -f config/userDef/astro-user-def.json
-sfdx shane:user:photo -f assets/astro-profile.png  -l Nomical
+# Assign permission set
+sf org assign permset -n ConnectedExecutiveEducationAccess
+sf org assign permset -n EventMonitoringPermSet
+sf org assign permset -n EinsteinAnalyticsPlusAdmin
 
-# install packages
+# Deploy Wave applications and dashboards (now that permissions are assigned)
+# Temporarily remove all Wave exclusions
+grep -v "wave" .forceignore > .forceignore.tmp && mv .forceignore.tmp .forceignore || true
+sf project deploy start --source-dir force-app/main/default/wave
+# Restore exclusions for future deployments
+echo "" >> .forceignore
+echo "# Wave apps and dashboards (excluded from initial deployment)" >> .forceignore
+echo "**/wave/*.wapp-meta.xml" >> .forceignore
+echo "**/wave/AdoptionAndUserJourneys.wdash" >> .forceignore
+echo "**/wave/AdoptionAndUserJourneys.wdash-meta.xml" >> .forceignore
+echo "**/wave/PerformanceAndHealth.wdash" >> .forceignore
+echo "**/wave/PerformanceAndHealth.wdash-meta.xml" >> .forceignore
+echo "**/wave/ThreatsAndAccess.wdash" >> .forceignore
+echo "**/wave/ThreatsAndAccess.wdash-meta.xml" >> .forceignore
 
-# volunteering
-sfdx force:package:install --package 04t6A000001Uee5QAC -w 20
-sfdx force:user:permset:assign -n VolunteeringApp
-sfdx force:data:tree:import -p data/volunteeringApp/VolunteerImportPlan.json
-sfdx force:apex:execute -f SetupScripting/VolunteerSetupScript.cls
+# Import test data
+sf data tree import -p data/masterImportPlan.json
 
-# recruiting
-sfdx force:package:install --package 04t6A000001Uee0QAC -w 20
-sfdx force:user:permset:assign -n Referrals
-sfdx force:data:bulk:upsert -f data/referrals.csv -s Referral__c -i Id
+# Open the org
+sf org open -p lightning/n/Free_Trial_Guide
