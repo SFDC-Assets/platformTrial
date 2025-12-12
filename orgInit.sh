@@ -1,35 +1,34 @@
 #!/bin/bash
-set -e  # Exit on error
+# set -e  # Exit on error
 
 # Create scratch org (use default dev hub or specify with -v flag)
 # Note: Requires sourceApiVersion: "66.0" in sfdx-project.json for Wave dashboards
-echo "Creating scratch org..."
-#sf org create scratch --definition-file config/project-scratch-def.json --duration-days 30 --target-dev-hub alm_demo_hub_org_2 --set-default --alias cee-scratch
+# echo "Creating scratch org..."
 sf demoutil org create scratch -f config/project-scratch-def.json -d 5 -s -p flow -e platformfreetrial.demo
 # Deploy everything except Wave (Wave needs permissions first)
-echo "Deploying metadata (excluding Wave)..."
+# echo "Deploying metadata (excluding Wave)..."
 sf project deploy start --manifest manifest/base-package.xml --wait 10
 
 # Assign permission sets
-echo "Assigning permission sets..."
+# echo "Assigning permission sets..."
 sf org assign permset -n ConnectedExecutiveEducationAccess || true
 sf org assign permset -n EventMonitoringPermSet || true
 sf org assign permset -n EinsteinAnalyticsPlusAdmin || true
 
 # Wait a moment for permissions to propagate
-echo "Waiting for permissions to propagate..."
-sleep 5
+# echo "Waiting for permissions to propagate..."
+# sleep 5
 
 # Deploy Wave applications and dashboards (now that permissions are assigned)
-echo "Deploying Wave applications and dashboards..."
+# echo "Deploying Wave applications and dashboards..."
 sf project deploy start --source-dir force-app/main/default/wave --wait 10
 
 # Import test data
-echo "Importing test data..."
+# echo "Importing test data..."
 sf data tree import -p data/masterImportPlan.json
 
 # Open the org
-echo "Opening org..."
+# echo "Opening org..."
 sf org open -p lightning/n/Free_Trial_Guide
 
-echo "✅ Setup complete!"
+# echo "✅ Setup complete!"
