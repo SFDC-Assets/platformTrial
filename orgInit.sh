@@ -7,13 +7,13 @@
 sf demoutil org create scratch -f config/project-scratch-def.json -d 5 -s -p flow -e platformfreetrial.demo
 # Deploy everything except Wave (Wave needs permissions first)
 # echo "Deploying metadata (excluding Wave)..."
-sf project deploy start --manifest manifest/base-package.xml --wait 10
+sf project deploy start
 
 # Assign permission sets
 # echo "Assigning permission sets..."
-sf org assign permset -n ConnectedExecutiveEducationAccess || true
-sf org assign permset -n EventMonitoringPermSet || true
-sf org assign permset -n EinsteinAnalyticsPlusAdmin || true
+sf org assign permset -n ConnectedExecutiveEducationAccess 
+sf org assign permset -n EventMonitoringPermSet
+sf org assign permset -n EinsteinAnalyticsPlusAdmin
 
 # Wait a moment for permissions to propagate
 # echo "Waiting for permissions to propagate..."
@@ -21,7 +21,7 @@ sf org assign permset -n EinsteinAnalyticsPlusAdmin || true
 
 # Deploy Wave applications and dashboards (now that permissions are assigned)
 # echo "Deploying Wave applications and dashboards..."
-sf project deploy start --source-dir force-app/main/default/wave --wait 10
+sf project deploy start --source-dir wave-app
 
 # Import test data
 # echo "Importing test data..."
