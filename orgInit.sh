@@ -13,7 +13,7 @@ sf project deploy start
 # echo "Assigning permission sets..."
 sf org assign permset -n ConnectedExecutiveEducationAccess 
 sf org assign permset -n EventMonitoringPermSet
-sf org assign permset -n EinsteinAnalyticsPlusAdmin
+# sf org assign permset -n EinsteinAnalyticsPlusAdmin
 
 # Wait a moment for permissions to propagate
 # echo "Waiting for permissions to propagate..."
