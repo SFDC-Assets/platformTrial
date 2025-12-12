@@ -27,6 +27,8 @@ sf project deploy start --source-dir wave-app
 # echo "Importing test data..."
 sf data tree import -p data/masterImportPlan.json
 
+sf demoutil user password set -p salesforce1 -g User -l User
+
 # Open the org
 # echo "Opening org..."
 sf org open -p lightning/n/Free_Trial_Guide
