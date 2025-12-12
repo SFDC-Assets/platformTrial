@@ -1,1 +1,7 @@
 **default/profiles
+**/jsconfig.json
+
+**/.eslintrc.json
+
+# Static resource too large (>5MB)
+**/staticresources/new_test_creation_2.*
