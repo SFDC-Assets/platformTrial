@@ -6,17 +6,9 @@ set -e  # Exit on error
 echo "Creating scratch org..."
 #sf org create scratch --definition-file config/project-scratch-def.json --duration-days 30 --target-dev-hub alm_demo_hub_org_2 --set-default --alias cee-scratch
 sf demoutil org create scratch -f config/project-scratch-def.json -d 5 -s -p flow -e platformfreetrial.demo
-# Deploy source (Wave will fail but that's OK - we'll deploy it after permissions)
-echo "Deploying metadata..."
-set +e  # Temporarily allow errors
-sf project deploy start --wait 10
-DEPLOY_EXIT=$?
-set -e  # Re-enable error handling
-
-# If deployment failed due to Wave permissions, that's expected - continue
-if [ $DEPLOY_EXIT -ne 0 ]; then
-    echo "Initial deployment had errors (expected if Wave was included). Continuing..."
-fi
+# Deploy everything except Wave (Wave needs permissions first)
+echo "Deploying metadata (excluding Wave)..."
+sf project deploy start --manifest manifest/base-package.xml --wait 10
 
 # Assign permission sets
 echo "Assigning permission sets..."
