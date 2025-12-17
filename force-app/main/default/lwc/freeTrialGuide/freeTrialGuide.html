@@ -292,10 +292,6 @@
                                     <li>Enable <strong>"Enable the Agentforce (Default) Agent"</strong></li>
                                     <li>Click <strong>Save</strong></li>
                                 </ol>
-                                <div class="section-screenshot">
-                                    <img src={einsteinSetupImage} alt="Einstein for Setup - Agentforce Agents"
-                                        class="screenshot-image" />
-                                </div>
                             </div>
 
                             <!-- Step 2: Open the Default Agent -->
@@ -304,14 +300,9 @@
                                     <span class="config-number">2</span>
                                     <h3>Open the Default Agent</h3>
                                 </div>
-                                <p>Now let's go to Agentforce Builder, your hub for building and customizing your
-                                    Agentforce.</p>
                                 <ol class="numbered-steps">
-                                    <li>Return to <strong>Setup</strong>.</li>
-                                    <li>Search for "<strong>Agentforce Agents</strong>" and select <strong>Agentforce
-                                            (Default)</strong></li>
-                                    <li>This opens <strong>Agentforce Builder</strong> (Topics, Data, Actions, Language,
-                                        Events…)</li>
+                                    <li>Open <strong>Agentforce (Default)</strong></li>
+                                    <li>This opens <strong>Agentforce Builder</strong> (Topics, Data, Actions, Language, Events…)</li>
                                 </ol>
                                 <div class="section-screenshot">
                                     <img src={agentforceBuilderImage} alt="Agentforce Builder Interface"
@@ -429,7 +420,10 @@
                                 <p>Great work! Your agent is ready to test and iterate on.</p>
                                 <p>Use the <strong>Conversation Preview</strong> window on the right-hand side of
                                     Agentforce Builder to test the new Learning Management Lookup topic.</p>
-                                <p>Try asking, "<em>Tell me about the Cybersecurity for Executives course.</em>"</p>
+                                <div class="tip-box">
+                                    <span>💬</span>
+                                    <span>Try asking, "<em>Tell me about the Cybersecurity for Executives course.</em>"</span>
+                                </div>
                                 <div class="section-screenshot">
                                     <img src={agentBuilderTestImage} alt="Testing Agent in Builder"
                                         class="screenshot-image" />
@@ -499,29 +493,18 @@
                                 </div>
                                 <ol class="numbered-steps">
                                     <li>Name the test suite: <code>Learning Management Lookup</code></li>
-                                    <li>Add the description:
-                                        <code>Validates course lookups, student queries, and enrollment checks.</code>
-                                    </li>
+                                    <li>Add the description: <code>Validates course lookups, student queries, and enrollment checks.</code></li>
                                     <li>Click <strong>Next</strong></li>
-                                    <li>In the <strong>Conditions</strong> section, select the option to
-                                        <strong>generate test cases based on topics and actions</strong>
-                                    </li>
                                     <li>Check the box for <strong>Include conversation history</strong></li>
                                     <li>Check the box for <strong>Include context variables</strong></li>
-                                    <li>Under the <strong>Context Variable</strong> list, select <strong>Contact
-                                            ID</strong></li>
+                                    <li>Under the <strong>Context Variable</strong> list, select <strong>Contact ID</strong></li>
+                                    <li>In the <strong>Conditions</strong> section, select the option to <strong>generate test cases based on topics and actions</strong></li>
+                                    <li>Click <strong>Next</strong> to select Evaluation condition and click <strong>Create</strong></li>
                                 </ol>
                                 <div class="section-screenshot">
                                     <img src={newTestCreationTestCaseImage} alt="Test Case Creation Configuration"
                                         class="screenshot-image" />
                                 </div>
-                                <ol class="numbered-steps">
-                                    <li>Then check the boxes for the remaining two blocks: <strong>Test Conditions, Test
-                                            Data, and Evaluation</strong></li>
-                                    <li>Click <strong>Next</strong> to proceed to Test Conditions, Test Data, and
-                                        Evaluation</li>
-                                    <li>Click <strong>Create</strong></li>
-                                </ol>
                             </div>
 
                             <!-- Step 3: Run the Evaluation -->
@@ -535,9 +518,7 @@
                                     <li>Click <strong>Run Suite</strong> in the top right</li>
                                     <li>Batch Test will simulate these user inputs against the current agent
                                         configuration in parallel</li>
-                                    <li>Wait for the status to change from <strong>Running</strong> to
-                                        <strong>Completed</strong>
-                                    </li>
+                                    <li>Wait for the status to change from <strong>Running</strong> to <strong>Completed</strong></li>
                                 </ol>
                                 <div class="section-screenshot">
                                     <img src={testCaseCreationInProgressImage} alt="Test Case Creation in Progress"
@@ -1345,64 +1326,72 @@
                         <div class="step-header">
                             <lightning-icon icon-name="utility:summary" size="large" class="step-icon"></lightning-icon>
                             <div class="step-header-text">
-                                <h2>Summary</h2>
-                                <p class="step-description">Review what you've accomplished in this free trial</p>
+                                <h2>Summary and Next Steps</h2>
+                                <p class="step-description">Review what you've accomplished in this free trial and find out where to learn more.</p>
                             </div>
                         </div>
                         <div class="instruction-panel">
-                            <div class="intro-section">
-                                <p>Congratulations! You've completed the Connected Executive Education Free Trial
-                                    journey. Let's take a moment to review what you've accomplished.</p>
+                            <div class="intro-section summary-congrats">
+                                <p>Congratulations! You've completed your Agentforce 360 Platform Free Trial journey in the Learning Management app. Let's take a moment to review what you've accomplished.</p>
                             </div>
 
                             <div class="summary-section">
                                 <h3>What You've Learned</h3>
-                                <div class="summary-grid">
-                                    <div class="summary-item">
-                                        <lightning-icon icon-name="utility:check" size="x-small"></lightning-icon>
-                                        <span>Navigate and explore the Learning Management app</span>
-                                    </div>
-                                    <div class="summary-item">
-                                        <lightning-icon icon-name="utility:check" size="x-small"></lightning-icon>
-                                        <span>Configure Agentforce with custom topics and actions</span>
-                                    </div>
-                                    <div class="summary-item">
-                                        <lightning-icon icon-name="utility:check" size="x-small"></lightning-icon>
-                                        <span>Test your agent with AI-generated test suites</span>
-                                    </div>
-                                    <div class="summary-item">
-                                        <lightning-icon icon-name="utility:check" size="x-small"></lightning-icon>
-                                        <span>Build and enhance UI with Agentforce Vibes</span>
-                                    </div>
-                                    <div class="summary-item">
-                                        <lightning-icon icon-name="utility:check" size="x-small"></lightning-icon>
-                                        <span>Deploy changes securely using metadata tools</span>
-                                    </div>
-                                    <div class="summary-item">
-                                        <lightning-icon icon-name="utility:check" size="x-small"></lightning-icon>
-                                        <span>Monitor events and track org activity</span>
-                                    </div>
-                                </div>
+                                <ul class="summary-list">
+                                    <li>You navigated and explored the custom Learning Management app from our fictitious company, Connected Executive Education</li>
+                                    <li>You configured Agentforce with custom topics and actions in Agentforce Builder</li>
+                                    <li>You tested Agentforce with AI-generated test suites in Agentforce Testing Center</li>
+                                    <li>You customized the application UI with Agentforce Vibes</li>
+                                    <li>You deployed those changes securely using metadata tools from DX Inspector</li>
+                                    <li>You monitored events and org activity after deployment to keep your org and data secure</li>
+                                </ul>
+                            </div>
+
+                            <div class="summary-section">
+                                <h3>What Happens Next?</h3>
+                                <p>Your trial will expire <strong>30</strong> days after you signed up. If you'd like to reach out to a Salesforce account executive to learn more about any of these features, click here to submit a <a href="https://www.salesforce.com/form/contact/contactme/" target="_blank"><strong>Contact Me</strong></a> request.</p>
                             </div>
 
                             <div class="action-box highlight">
                                 <div class="action-box-header">
-                                    <lightning-icon icon-name="utility:success" size="small"></lightning-icon>
+                                    <lightning-icon icon-name="utility:knowledge_base" size="small"></lightning-icon>
+                                    <h4>Continue Learning About the Agentforce 360 Platform</h4>
+                                </div>
+                                <p>Visit <a href="https://www.salesforce.com/platform" target="_blank">salesforce.com/platform</a> to read more about the deeply unified Agentforce 360 Platform, watch demos, and find more resources.</p>
+                            </div>
+
+                            <div class="action-box highlight">
+                                <div class="action-box-header">
+                                    <lightning-icon icon-name="utility:call" size="small"></lightning-icon>
+                                    <h4>Speak with Our Sales Team</h4>
+                                </div>
+                                <p>Click here to submit a <a href="https://www.salesforce.com/form/contact/contactme/" target="_blank"><strong>Contact Me</strong></a> request, and a Salesforce specialist will reach out.</p>
+                            </div>
+
+                            <div class="action-box highlight">
+                                <div class="action-box-header">
+                                    <lightning-icon icon-name="utility:video" size="small"></lightning-icon>
+                                    <h4>Get More Demos</h4>
+                                </div>
+                                <p>If you're interested in Salesforce ALM and governance, check out these product demos:</p>
+                                <ul class="demo-list">
+                                    <li>Platform ALM and Governance Demo</li>
+                                    <li>Salesforce Shield</li>
+                                    <li>Security Center</li>
+                                    <li>Privacy Center</li>
+                                    <li>Data Mask &amp; Seed</li>
+                                    <li>Backup &amp; Recover</li>
+                                    <li>Archive</li>
+                                    <li>Salesforce Sandboxes</li>
+                                </ul>
+                            </div>
+
+                            <div class="action-box highlight">
+                                <div class="action-box-header">
+                                    <lightning-icon icon-name="utility:trailhead" size="small"></lightning-icon>
                                     <h4>Continue Learning on Trailhead</h4>
                                 </div>
-                                <p>We recommend the <a
-                                        href="https://trailhead.salesforce.com/content/learn/modules/starting_force_com?trailmix_creator_id=akshaypoddar&trailmix_slug=salesforce-platform-basics"
-                                        target="_blank">Platform Basics trail</a> to deepen your knowledge of the tools
-                                    you've explored in this trial.</p>
-                            </div>
-
-                            <div class="action-box highlight">
-                                <div class="action-box-header">
-                                    <lightning-icon icon-name="utility:info" size="small"></lightning-icon>
-                                    <h4>What Happens Next?</h4>
-                                </div>
-                                <p>Your trial will expire on <strong>Date</strong>. If you are ready to move forward,
-                                    you can contact our sales team or visit our product page for upgrade options.</p>
+                                <p>We recommend the <a href="https://trailhead.salesforce.com/content/learn/modules/starting_force_com?trailmix_creator_id=akshaypoddar&trailmix_slug=salesforce-platform-basics" target="_blank">Platform Basics trail</a> to deepen your knowledge of the tools you've explored in this trial.</p>
                             </div>
                         </div>
                     </div>

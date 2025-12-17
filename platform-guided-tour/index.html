@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Salesforce Platform Tour</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="tour-container">
+        <!-- Top Navigation -->
+        <nav class="top-nav">
+            <div class="nav-brand">
+                <a href="#!" class="logo-link">Salesforce</a>
+            </div>
+            <div class="nav-links">
+                <a href="#!" class="nav-link">Watch demo</a>
+            </div>
+        </nav>
+
+        <!-- Main Content - Full Screen Slides -->
+        <main class="tour-slides">
+            <!-- Welcome Slide -->
+            <section class="tour-slide active" data-slide="0">
+                <div class="slide-content">
+                    <h1>Salesforce Platform Tour</h1>
+                    <p class="slide-intro">Welcome! In this tour, you'll see how the Salesforce Platform helps you build, secure, and govern your Agentforce and AI apps. Ready to get started?</p>
+                    <button class="btn-continue" onclick="tour.nextSlide()">Continue</button>
+                </div>
+            </section>
+
+            <!-- Step 1: Tour the App -->
+            <section class="tour-slide" data-slide="1">
+                <div class="slide-content">
+                    <div class="slide-header">
+                        <span class="slide-number">1</span>
+                        <h2>Tour the App</h2>
+                        <p class="slide-subtitle">Explore the components and data in Connected Executive Education's custom application</p>
+                    </div>
+                    <div class="slide-body">
+                        <p class="intro-text">The Learning Management App is a fully configured, custom application that CEE built on the Agentforce 360 Platform. Before you start working with AI agents or metadata tools, take a brief tour of the core building blocks of this app.</p>
+                        
+                        <div class="content-grid">
+                            <div class="content-card">
+                                <h3>Courses</h3>
+                                <p>The <strong>Courses</strong> object stores all offerings available in CEE's executive education catalog. Each record includes essential details such as category, delivery format, duration, and instructor information.</p>
+                                <div class="screenshot-placeholder">
+                                    <img src="images/courses.png" alt="Courses" class="screenshot">
+                                </div>
+                            </div>
+                            <div class="content-card">
+                                <h3>Students</h3>
+                                <p>The <strong>Students</strong> object captures learner profiles for individuals enrolled in CEE's executive programs. Each profile includes the learner's name, role, organization, and contact information.</p>
+                                <div class="screenshot-placeholder">
+                                    <img src="images/students.png" alt="Students" class="screenshot">
+                                </div>
+                            </div>
+                            <div class="content-card">
+                                <h3>Enrollments</h3>
+                                <p>The <strong>Enrollments</strong> object connects students to their courses and tracks their progress. Each enrollment record includes the course name, student assigned, start dates, and progress indicator.</p>
+                                <div class="screenshot-placeholder">
+                                    <img src="images/enrollments.png" alt="Enrollments" class="screenshot">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide-controls">
+                        <button class="btn-nav btn-prev" onclick="tour.prevSlide()">Previous</button>
+                        <span class="slide-indicator">1 / 6</span>
+                        <button class="btn-nav btn-next" onclick="tour.nextSlide()">Next</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Step 2: Agentforce Builder -->
+            <section class="tour-slide" data-slide="2">
+                <div class="slide-content">
+                    <div class="slide-header">
+                        <span class="slide-number">2</span>
+                        <h2>Agentforce Builder</h2>
+                        <p class="slide-subtitle">Build and customize Agentforce with no code</p>
+                    </div>
+                    <div class="slide-body">
+                        <p class="intro-text">Agentforce helps you bring AI agents into your workflows and applications to improve productivity, with humans and agents working together.</p>
+                        
+                        <div class="steps-list">
+                            <div class="step-item">
+                                <span class="step-num">1</span>
+                                <div class="step-content">
+                                    <h3>Enable Agentforce</h3>
+                                    <p>Turn on Agentforce in Setup → Agentforce Agents</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <span class="step-num">2</span>
+                                <div class="step-content">
+                                    <h3>Open the Default Agent</h3>
+                                    <p>Access Agentforce Builder to configure your agent</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <span class="step-num">3</span>
+                                <div class="step-content">
+                                    <h3>Create a New Topic</h3>
+                                    <p>Define specific conversation areas your agent can handle</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <span class="step-num">4</span>
+                                <div class="step-content">
+                                    <h3>Add Agent Actions</h3>
+                                    <p>Configure Apex actions for course lookups, student queries, and enrollment checks</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="screenshot-full">
+                            <img src="images/agentforce-builder.png" alt="Agentforce Builder" class="screenshot">
+                        </div>
+                    </div>
+                    <div class="slide-controls">
+                        <button class="btn-nav btn-prev" onclick="tour.prevSlide()">Previous</button>
+                        <span class="slide-indicator">2 / 6</span>
+                        <button class="btn-nav btn-next" onclick="tour.nextSlide()">Next</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Step 3: Test Agentforce -->
+            <section class="tour-slide" data-slide="3">
+                <div class="slide-content">
+                    <div class="slide-header">
+                        <span class="slide-number">3</span>
+                        <h2>Test Agentforce</h2>
+                        <p class="slide-subtitle">Validate your agent with automated testing</p>
+                    </div>
+                    <div class="slide-body">
+                        <p class="intro-text">The Agentforce Testing Center helps you validate your agent's performance with automated test suites that simulate user interactions.</p>
+                        
+                        <div class="steps-list">
+                            <div class="step-item">
+                                <span class="step-num">1</span>
+                                <div class="step-content">
+                                    <h3>Open Batch Test</h3>
+                                    <p>Access the testing interface from Agentforce Builder</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <span class="step-num">2</span>
+                                <div class="step-content">
+                                    <h3>Create Test Suite</h3>
+                                    <p>Name: "Learning Management Lookup" with test conditions and evaluation criteria</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <span class="step-num">3</span>
+                                <div class="step-content">
+                                    <h3>Run Evaluation</h3>
+                                    <p>Execute test cases in parallel and wait for completion</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <span class="step-num">4</span>
+                                <div class="step-content">
+                                    <h3>Analyze Results</h3>
+                                    <p>Review pass rates, reasoning chains, and regression checks</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="screenshot-full">
+                            <img src="images/batch-test.png" alt="Batch Test" class="screenshot">
+                        </div>
+                    </div>
+                    <div class="slide-controls">
+                        <button class="btn-nav btn-prev" onclick="tour.prevSlide()">Previous</button>
+                        <span class="slide-indicator">3 / 6</span>
+                        <button class="btn-nav btn-next" onclick="tour.nextSlide()">Next</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Step 4: Agentforce Vibes -->
+            <section class="tour-slide" data-slide="4">
+                <div class="slide-content">
+                    <div class="slide-header">
+                        <span class="slide-number">4</span>
+                        <h2>Agentforce Vibes</h2>
+                        <p class="slide-subtitle">Unleash developer productivity with vibe coding</p>
+                    </div>
+                    <div class="slide-body">
+                        <p class="intro-text">Vibe coding has come to Salesforce with Agentforce Vibes! Purpose-built for our platform, Agentforce Vibes is context-aware and understands your org's configuration and metadata.</p>
+                        
+                        <div class="steps-list">
+                            <div class="step-item">
+                                <span class="step-num">1</span>
+                                <div class="step-content">
+                                    <h3>Launch the IDE</h3>
+                                    <p>Open Agentforce Vibes from Setup</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <span class="step-num">2</span>
+                                <div class="step-content">
+                                    <h3>Quick Configurations</h3>
+                                    <p>Accept terms and enable building</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <span class="step-num">3</span>
+                                <div class="step-content">
+                                    <h3>Explore Home Screen</h3>
+                                    <p>Understand MCP and capabilities</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <span class="step-num">4</span>
+                                <div class="step-content">
+                                    <h3>Try It Out</h3>
+                                    <p>Use natural language to modify Lightning Web Components</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <span class="step-num">5</span>
+                                <div class="step-content">
+                                    <h3>Deploy to Org</h3>
+                                    <p>Package and deploy changes using natural language</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="screenshot-full">
+                            <img src="images/vibes-ide.png" alt="Agentforce Vibes IDE" class="screenshot">
+                        </div>
+                    </div>
+                    <div class="slide-controls">
+                        <button class="btn-nav btn-prev" onclick="tour.prevSlide()">Previous</button>
+                        <span class="slide-indicator">4 / 6</span>
+                        <button class="btn-nav btn-next" onclick="tour.nextSlide()">Next</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Step 5: Deploy Securely -->
+            <section class="tour-slide" data-slide="5">
+                <div class="slide-content">
+                    <div class="slide-header">
+                        <span class="slide-number">5</span>
+                        <h2>Deploy Securely</h2>
+                        <p class="slide-subtitle">Deploy seamlessly with built-in metadata tools</p>
+                    </div>
+                    <div class="slide-body">
+                        <p class="intro-text">Use the DX Inspector to manage your deployment process visually. This unified interface allows you to select and deploy both structural changes and configuration records.</p>
+                        
+                        <div class="feature-box">
+                            <h3>Deployment Features</h3>
+                            <ul>
+                                <li><strong>Metadata Deployment (Beta)</strong> – Moves your app's metadata, including modified Lightning Web Components, layouts, and Agentforce rules</li>
+                                <li><strong>Data Deployment (Developer Preview)</strong> – Moves critical configuration records that your application relies on</li>
+                            </ul>
+                        </div>
+
+                        <div class="steps-list">
+                            <div class="step-item">
+                                <span class="step-num">1</span>
+                                <div class="step-content">
+                                    <h3>Initialize DX Inspector</h3>
+                                    <p>Open and accept terms (first time)</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <span class="step-num">2</span>
+                                <div class="step-content">
+                                    <h3>Select Metadata</h3>
+                                    <p>Choose LearningManagementController and LearningManagementControllerTest</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <span class="step-num">3</span>
+                                <div class="step-content">
+                                    <h3>Connect to Target Org</h3>
+                                    <p>Authenticate and connect using credentials</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <span class="step-num">4</span>
+                                <div class="step-content">
+                                    <h3>Deploy Changes</h3>
+                                    <p>Review preview and deploy</p>
+                                </div>
+                            </div>
+                            <div class="step-item">
+                                <span class="step-num">5</span>
+                                <div class="step-content">
+                                    <h3>Monitor and Verify</h3>
+                                    <p>Check deployment status in target org</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="screenshot-full">
+                            <img src="images/deploy-changes-preview.png" alt="Deploy Changes Preview" class="screenshot">
+                        </div>
+                    </div>
+                    <div class="slide-controls">
+                        <button class="btn-nav btn-prev" onclick="tour.prevSlide()">Previous</button>
+                        <span class="slide-indicator">5 / 6</span>
+                        <button class="btn-nav btn-next" onclick="tour.nextSlide()">Next</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Step 6: Event Monitoring -->
+            <section class="tour-slide" data-slide="6">
+                <div class="slide-content">
+                    <div class="slide-header">
+                        <span class="slide-number">6</span>
+                        <h2>Event Monitoring</h2>
+                        <p class="slide-subtitle">Track and analyze changes in your org</p>
+                    </div>
+                    <div class="slide-body">
+                        <p class="intro-text">The Event Monitoring Analytics App gives you immediate visibility into what's happening inside your Salesforce org. It comes with prebuilt dashboards powered by the EventLogFile object.</p>
+                        
+                        <div class="content-grid">
+                            <div class="content-card">
+                                <h3>Threats and Access</h3>
+                                <p>Monitor security events and access patterns to protect your org and data.</p>
+                                <div class="screenshot-placeholder">
+                                    <img src="images/threats.png" alt="Threats Dashboard" class="screenshot">
+                                </div>
+                            </div>
+                            <div class="content-card">
+                                <h3>Performance and Health</h3>
+                                <p>Track system performance metrics and identify optimization opportunities.</p>
+                                <div class="screenshot-placeholder">
+                                    <img src="images/performance.png" alt="Performance Dashboard" class="screenshot">
+                                </div>
+                            </div>
+                            <div class="content-card">
+                                <h3>Adoption and User Journeys</h3>
+                                <p>Understand user engagement and adoption patterns across your org.</p>
+                                <div class="screenshot-placeholder">
+                                    <img src="images/user-activity.png" alt="User Activity" class="screenshot">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slide-controls">
+                        <button class="btn-nav btn-prev" onclick="tour.prevSlide()">Previous</button>
+                        <span class="slide-indicator">6 / 6</span>
+                        <button class="btn-nav btn-next" onclick="tour.finish()">Finish</button>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Footer -->
+        <footer class="tour-footer">
+            <p>© 2023 Salesforce.com, inc. All rights reserved. Various trademarks held by their respective owners. Salesforce.com, inc. Salesforce Tower, 415 Mission Street, 3rd Floor, San Francisco, CA 94105, United States</p>
+            <ul class="footer-links">
+                <li><a href="https://www.salesforce.com/company/legal/sfdc-website-terms-of-service.jsp">Terms of Service</a></li>
+                <li>|</li>
+                <li><a href="https://www.salesforce.com/company/privacy/">Privacy</a></li>
+                <li>|</li>
+                <li><a href="https://www.salesforce.com/company/disclosure/">Responsible Disclosure</a></li>
+                <li>|</li>
+                <li><a href="https://trust.salesforce.com/">Trust</a></li>
+                <li>|</li>
+                <li><a href="https://www.salesforce.com/form/contact/contactme.jsp?d=70130000000EeYa">Contact</a></li>
+                <li>|</li>
+                <li><a href="#">Cookie Preferences</a></li>
+            </ul>
+        </footer>
+    </div>
+
+    <script src="js/tour.js"></script>
+</body>
+</html>
