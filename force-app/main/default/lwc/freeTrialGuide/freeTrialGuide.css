@@ -740,6 +740,22 @@
     text-decoration: underline;
 }
 
+/* Creds box on welcome step */
+.creds-box {
+    margin-top: 1.5rem;
+}
+
+.creds-list {
+    margin: 0.75rem 0 0;
+    padding-left: 1.25rem;
+}
+
+.creds-list li {
+    font-size: 0.9rem;
+    color: #444;
+    margin-bottom: 0.25rem;
+}
+
 /* Config Section */
 .intro-section {
     margin-bottom: 2rem;
@@ -797,6 +813,22 @@
     color: #444;
     margin-bottom: 0.75rem;
     line-height: 1.6;
+}
+
+.numbered-steps li ul,
+.numbered-steps li ol {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.numbered-steps a {
+    color: #0176d3;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.numbered-steps a:hover {
+    text-decoration: underline;
 }
 
 code {
@@ -1066,9 +1098,31 @@ code.code-block {
     margin-top: 1rem;
 }
 
+.info-box.release-status {
+    background: #f8f7f2;
+    border: none;
+    border-left: 4px solid #143b58;
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin-top: 1rem;
+}
+
+.info-box.release-status lightning-icon {
+    display: none;
+    min-height: 1.25rem;
+    border-radius: 50%;
+    background-color: #706e6b;
+}
+
 .info-box span {
     font-size: 0.9rem;
     color: #143b58;
+}
+
+.info-box.release-status span {
+    color: #333;
+    line-height: 1.6;
+    font-size: 0.95rem;
 }
 
 /* Prompt Section */
@@ -1362,9 +1416,21 @@ code.code-block {
 .em-section {
     margin-bottom: 2rem;
     padding: 1.5rem;
-    background: #f8f9fb;
+    background: #ffffff;
     border-radius: 12px;
     border-left: 4px solid #143b58;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.em-section h3 {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #000000;
+    margin: 0 0 0.75rem 0;
+}
+
+.em-section .intro-text {
+    color: #333333;
 }
 
 .em-section-header {

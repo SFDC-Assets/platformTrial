@@ -46,6 +46,22 @@
                             </p>
                         </div>
 
+                        <template if:true={hasUserName}>
+                            <div class="action-box highlight creds-box">
+                                <div class="action-box-header">
+                                    <lightning-icon icon-name="standard:settings" size="small"></lightning-icon>
+                                    <h4>Your Trial Org Credentials</h4>
+                                </div>
+                                <p>
+                                    Use these credentials to sign in to this trial org if prompted. Your trial org expires in 30 days, on <strong>{trialExpiryDate}</strong>.
+                                </p>
+                                <ul class="creds-list">
+                                    <li><strong>Username</strong>: {userName}</li>
+                                    <li><strong>Password</strong>: <code>salesforce1</code></li>
+                                </ul>
+                            </div>
+                        </template>
+
                         <div class="image-usecase-row">
                             <div class="use-case-section">
                                 <div class="use-case-header">
@@ -828,136 +844,179 @@
                                 you to select and deploy both the structural changes and the configuration records
                                 needed to keep your application running smoothly.</p>
 
-                            <!-- The Deployment Payload -->
-                            <div class="config-section">
-                                <h3>The Deployment Payload</h3>
-                                <p class="intro-text">This workflow utilizes two specific features to ensure a complete
-                                    migration:</p>
+                            <!-- Metadata and Data Deployment -->
+                            <div class="em-section">
+                                <h3>Metadata and data deployment</h3>
+                                <p class="intro-text">Use these two deployment features to move both your app's structure
+                                    and configuration data between orgs:</p>
                                 <ul class="feature-list">
-                                    <li><strong>Metadata Deployment (Beta)</strong> — Moves the architecture of your
-                                        app, including the modified Lightning Web Components, layouts, and Agentforce
-                                        rules.</li>
-                                    <li><strong>Data Deployment (Developer Preview)</strong> — Moves the critical
-                                        configuration records (like the Learning Management course data) that your
-                                        application relies on to function.</li>
+                                    <li><strong>Metadata Deployment (Beta)</strong> – Moves your app's metadata,
+                                        including modified Lightning Web Components, layouts, and Agentforce rules.</li>
+                                    <li><strong>Data Deployment (Developer Preview)</strong> – Moves the critical
+                                        configuration records (like the Learning Management course data) that your application
+                                        relies on to function.</li>
                                 </ul>
-                                <div class="info-box">
+                                <div class="info-box release-status">
                                     <lightning-icon icon-name="utility:info" size="x-small"></lightning-icon>
-                                    <span><strong>Required Editions:</strong> Available in Professional, Enterprise,
-                                        Performance, Unlimited, and Developer Editions.</span>
+                                    <span><strong>Release status:</strong> Metadata Deployment is available in <strong>open beta</strong> and Data Deployment is available as a <strong>developer preview/pilot</strong>. Features in beta or pilot are subject to change and are governed by Salesforce's pilot and beta terms.</span>
                                 </div>
                             </div>
 
-                            <!-- Enable Deployment Features -->
-                            <div class="config-section">
-                                <h3>Enable Deployment Features</h3>
-                                <p class="intro-text">Before accessing the DX Inspector, ensure the org is authorized
-                                    for these operations.</p>
-                                <ol class="numbered-steps">
-                                    <li>In your Salesforce scratch org, click the <strong>Setup gear icon</strong> (top
-                                        right)</li>
-                                    <li>In the Quick Find box, enter <code>Change Management</code></li>
-                                    <li>Select <strong>Change Management</strong></li>
-                                    <li>Toggle <strong>On</strong> for <strong>Org-to-org metadata deployment
-                                            (Beta)</strong></li>
-                                    <li>Toggle <strong>On</strong> for <strong>Data deployment (Developer
-                                            Preview)</strong></li>
-                                </ol>
-                                <div class="section-screenshot">
-                                    <img src={changeManagementImage} alt="Change Management Settings"
-                                        class="screenshot-image" />
+                            <!-- Pre-Configuration Steps -->
+                            <div class="em-preconfig-section">
+                                <div class="em-section-header">
+                                    <span class="em-icon">🔷</span>
+                                    <h3>Pre-Configuration Steps</h3>
+                                </div>
+
+                                <!-- Step 1: Create Target Org -->
+                                <div class="config-section">
+                                    <div class="config-header">
+                                        <span class="config-number circle-only">●</span>
+                                        <h3>Create a Target Org</h3>
+                                    </div>
+                                    <p class="intro-text">Before deploying, you need a target org to deploy to. Create a new scratch org that will serve as your target environment for this exercise.</p>
+                                    <ol class="numbered-steps">
+                                        <li>Click <a href="http://hosted-scratch.herokuapp.com/launch?template=https://github.com/SFDC-Assets/platformTrial/tree/jan26-trial-experience" target="_blank" rel="noopener noreferrer">here</a> to create a new target org (opens in a new tab)</li>
+                                        <li>Wait for the org to be created and loaded — this process takes a couple of minutes. Authentication happens automatically.</li>
+                                        <li>Keep this target org tab open — you will use it later in the deployment process</li>
+                                    </ol>
+                                    <p class="preconfig-note">This target org will receive the metadata and data you deploy from your current scratch org.</p>
+                                </div>
+
+                                <!-- Step 2: Enable Deployment Features -->
+                                <div class="config-section">
+                                    <div class="config-header">
+                                        <span class="config-number circle-only">●</span>
+                                        <h3>Enable Deployment Features</h3>
+                                    </div>
+                                    <p class="intro-text">Before accessing the DX Inspector, ensure the org is authorized
+                                        for these operations.</p>
+                                    <ol class="numbered-steps">
+                                        <li>In your Salesforce scratch org, click the <strong>Setup gear icon</strong> (top
+                                            right)</li>
+                                        <li>In the Quick Find box, enter <code>Change Management</code></li>
+                                        <li>Select <strong>Change Management</strong></li>
+                                        <li>Toggle <strong>On</strong> for <strong>Org-to-org metadata deployment
+                                                (Beta)</strong></li>
+                                        <li>Toggle <strong>On</strong> for <strong>Data deployment (Developer
+                                                Preview)</strong></li>
+                                    </ol>
+                                    <div class="section-screenshot">
+                                        <img src={changeManagementImage} alt="Change Management Settings"
+                                            class="screenshot-image" />
+                                    </div>
                                 </div>
                             </div>
 
                             <!-- Initialize DX Inspector -->
                             <div class="config-section">
-                                <h3>Initialize DX Inspector</h3>
+                                <div class="config-header">
+                                    <span class="config-number">1</span>
+                                    <h3>Initialize DX Inspector</h3>
+                                </div>
                                 <p class="intro-text">Access the dedicated UI for managing your deployment payload.</p>
                                 <ol class="numbered-steps">
-                                    <li>Open <strong>DX Inspector</strong></li>
+                                    <li>Open <strong>DX Inspector</strong> — the first time you might be asked to accept the terms and proceed.</li>
+                                    <li>If prompted, review the access permissions and click <strong>Allow</strong> to grant access to ALMDevOpsConnectedApp.</li>
                                     <li>Navigate to the <strong>Change Management</strong> page</li>
                                     <li>Click on the <strong>Change List</strong> tab to begin selecting items</li>
                                 </ol>
-                                <div class="section-screenshot">
-                                    <img src={deployImage} alt="DX Inspector" class="screenshot-image" />
-                                </div>
                             </div>
 
                             <!-- Select Metadata to Deploy -->
                             <div class="config-section">
-                                <h3>Select Metadata to Deploy</h3>
-                                <p class="intro-text">First, bundle the structural changes.</p>
-                                <ol class="numbered-steps">
-                                    <li>Click the <strong>Metadata</strong> tab</li>
-                                    <li>Browse the list and select the metadata files you wish to deploy (e.g., LWC
-                                        files, Flexipages, Permission Sets)</li>
-                                </ol>
-                            </div>
-
-                            <!-- Select Data Records to Migrate -->
-                            <div class="config-section">
-                                <h3>Select Data Records to Migrate</h3>
-                                <p class="intro-text">Next, choose the configuration data to migrate, ensuring
-                                    relationships are preserved.</p>
-                                <ol class="numbered-steps">
-                                    <li>Click the <strong>Data</strong> tab</li>
-                                    <li>Locate the specific data object you want to migrate</li>
-                                    <li>In the object's row, click the <strong>down arrow (▼)</strong> icon and select
-                                        <strong>Select Associated Records...</strong>
-                                    </li>
-                                    <li>Choose any related objects to include in the deployment and click
-                                        <strong>Next</strong>
-                                    </li>
-                                </ol>
-                                <div class="info-box">
-                                    <lightning-icon icon-name="utility:info" size="x-small"></lightning-icon>
-                                    <span><strong>Configure Object Mapping</strong> (Complete for each selected
-                                        object)</span>
+                                <div class="config-header">
+                                    <span class="config-number">2</span>
+                                    <h3>Select Metadata to Deploy</h3>
                                 </div>
-                                <ul class="feature-list">
-                                    <li><strong>External ID</strong> — Select a unique External ID to map records and
-                                        prevent duplicates in the target org</li>
-                                    <li><strong>(Optional) Edit Fields</strong> — Click Edit Fields... to restrict
-                                        specific fields (required fields are selected by default)</li>
-                                    <li><strong>(Optional) Add Filters</strong> — Click Add Filters to define criteria
-                                        if you only want to migrate a subset of records</li>
-                                </ul>
+                                <p class="intro-text">First, bundle the structural changes by selecting the specific Apex classes you want to deploy.</p>
                                 <ol class="numbered-steps">
-                                    <li>Click <strong>Next</strong></li>
-                                    <li>Review the list of filtered records and click <strong>Add</strong></li>
+                                    <li>Click the <strong>Metadata</strong> tab (if not already selected)</li>
+                                    <li>In the Change List, locate and select the checkbox next to <strong>LearningManagementController</strong> (ApexClass)</li>
+                                    <li>Select the checkbox next to <strong>LearningManagementControllerTest</strong> (ApexClass)</li>
+                                    <li>Click the <strong>Deploy Options...</strong> button</li>
                                 </ol>
+                                <div class="section-screenshot">
+                                    <img src={dxInspectorChangeListImage} alt="Select Metadata for Deployment" class="screenshot-image" />
+                                </div>
                             </div>
 
                             <!-- Deploy to the Target Org -->
                             <div class="config-section">
-                                <h3>Deploy to the Target Org</h3>
-                                <p class="intro-text">Push the selected metadata and data bundle.</p>
+                                <div class="config-header">
+                                    <span class="config-number">3</span>
+                                    <h3>Connect to the Target Org</h3>
+                                </div>
+                                <p class="intro-text">Connect to your target org using its credentials to enable deployment.</p>
                                 <ol class="numbered-steps">
-                                    <li>On the Change Management page, click the <strong>Deploy Options...</strong>
-                                        button</li>
-                                    <li>In the Deploy Changes window, select your <strong>target org</strong></li>
-                                    <li>(Note: If the target org isn't listed, connect to a new org and authenticate
-                                        here)</li>
-                                    <li>Click <strong>Next</strong></li>
-                                    <li>Review the <strong>Deployment Summary</strong> to confirm all counts are correct
-                                    </li>
-                                    <li>Click <strong>Deploy</strong></li>
+                                    <li>In the <strong>Deploy Changes</strong> window, if you don't see your target org listed under "Existing Target Org", proceed to connect a new org.</li>
+                                    <li>In the <strong>New Target Org</strong> section, enter an <strong>Environment Name</strong> (e.g., "target-org")</li>
+                                    <li>Select the radio button for <strong>Sandbox or scratch org</strong></li>
+                                    <li>Click the <strong>Connect</strong> button</li>
+                                    <li>You will be redirected to the Salesforce login window. Enter your target org credentials (username and password) and log in</li>
+                                    <li>If prompted with an "Allow Access?" screen, review the permissions and click <strong>Allow</strong> to grant access</li>
+                                    <li>Once connected, you'll return to the Deploy Changes window with your target org now listed</li>
                                 </ol>
+                                <div class="section-screenshot">
+                                    <img src={deployChangesConnectImage} alt="Connect to Target Org" class="screenshot-image" />
+                                </div>
+                            </div>
+
+                            <!-- Deploy the Changes -->
+                            <div class="config-section">
+                                <div class="config-header">
+                                    <span class="config-number">4</span>
+                                    <h3>Deploy the Changes</h3>
+                                </div>
+                                <p class="intro-text">Review the deployment preview and deploy your selected metadata.</p>
+                                <ol class="numbered-steps">
+                                    <li>In the <strong>Deploy Changes</strong> window, select your connected <strong>target org</strong> from the Existing Target Org section</li>
+                                    <li>Click <strong>Next</strong> to proceed to the deployment preview</li>
+                                    <li>Review the <strong>Preview</strong> section which shows:
+                                        <ul class="feature-list">
+                                            <li><strong>Source Org</strong> (your current org) and <strong>Target Org</strong> (where you're deploying)</li>
+                                            <li>The metadata components being deployed (LearningManagementController and LearningManagementControllerTest)</li>
+                                        </ul>
+                                    </li>
+                                    <li>Verify the <strong>Metadata</strong> table shows the correct files with Operation type "modify"</li>
+                                    <li>Click the <strong>Deploy</strong> button to start the deployment</li>
+                                </ol>
+                                <div class="section-screenshot">
+                                    <img src={deployChangesPreviewImage} alt="Deploy Changes Preview" class="screenshot-image" />
+                                </div>
                             </div>
 
                             <!-- Monitor and Verify -->
                             <div class="config-section">
-                                <h3>Monitor and Verify</h3>
-                                <p class="intro-text">Confirm that the deployment landed successfully.</p>
-                                <ul class="feature-list">
-                                    <li><strong>For Metadata</strong> — Check status under <strong>Monitor
-                                            Deployments</strong></li>
-                                    <li><strong>For Data</strong> — Check status under <strong>View Bulk Data Load Job
-                                            Details</strong></li>
-                                </ul>
-                                <p class="intro-text">After the process completes, log in to the target org and verify
-                                    that your Learning Management Dashboard loads correctly with the new legend and
-                                    course data.</p>
+                                <div class="config-header">
+                                    <span class="config-number">5</span>
+                                    <h3>Monitor and Verify Deployment</h3>
+                                </div>
+                                <p class="intro-text">Confirm that the deployment completed successfully in the target org.</p>
+                                <ol class="numbered-steps">
+                                    <li>After clicking Deploy, the deployment process will begin. Wait for it to complete.</li>
+                                    <li>Navigate to the target org and go to <strong>Setup</strong></li>
+                                    <li>In Setup, search for and open <strong>Deployment Status</strong></li>
+                                    <li>You will see the deployment listed with status <strong>"Deployment Succeeded"</strong></li>
+                                    <li>Verify that both LearningManagementController and LearningManagementControllerTest are now available in the target org</li>
+                                </ol>
+                                <div class="section-screenshot">
+                                    <img src={deploymentStatusImage} alt="Deployment Status" class="screenshot-image" />
+                                </div>
+                            </div>
+
+                            <!-- Data Deployment Note -->
+                            <p class="intro-text" style="margin-top: 1.5rem;">While this guide focused on moving structural metadata, the DX Inspector also supports <strong>Data Deployment (Developer Preview)</strong>. This allows you to migrate the actual configuration records—like course data and relationships—required for your app to function. To explore how to preserve record relationships and map external IDs during a data migration, check out the official Salesforce <a href="https://help.salesforce.com/s/articleView?language=en_US&id=platform.metadata_and_data_deployment.htm&type=5" target="_blank">documentation</a> and try it for yourself!</p>
+
+                            <!-- Wrap Up -->
+                            <div class="action-box highlight">
+                                <div class="action-box-header">
+                                    <lightning-icon icon-name="utility:touch_action" size="small"></lightning-icon>
+                                    <h4>Wrap-Up</h4>
+                                </div>
+                                <p>Simple deployments made easier with DX Inspector help every Salesforce builder work faster without switching between tools.</p>
+                                <p>But we all know projects aren't done after deployment! Monitoring and observability are important to ensure your org and data are secure, and that your deployments perform as intended. Click <strong>"Next"</strong> to learn more about Event Monitoring.</p>
                             </div>
 
                         </div>

@@ -1,4 +1,7 @@
-import { LightningElement, track } from 'lwc';
+import { LightningElement, track, wire } from 'lwc';
+import { getRecord } from 'lightning/uiRecordApi';
+import USER_ID from '@salesforce/user/Id';
+import USERNAME_FIELD from '@salesforce/schema/User.Username';
 import TRIAL_HERO from '@salesforce/resourceUrl/trial_hero';
 import AGENTFORCE_BANNER from '@salesforce/resourceUrl/agentforce360_banner';
 import COURSES_IMAGE from '@salesforce/resourceUrl/courses';
@@ -35,6 +38,10 @@ import VIBES_SUMMARY_CARD_IMAGE from '@salesforce/resourceUrl/vibes_summary_card
 import VIBES_DEPLOY_1_IMAGE from '@salesforce/resourceUrl/vibes_deploy_1';
 import VIBES_DEPLOY_2_IMAGE from '@salesforce/resourceUrl/vibes_deploy_2';
 import VIBES_DASHBOARD_RESULT_IMAGE from '@salesforce/resourceUrl/vibes_dashboard_result';
+import DX_INSPECTOR_CHANGE_LIST_IMAGE from '@salesforce/resourceUrl/dx_inspector_change_list';
+import DEPLOY_CHANGES_CONNECT_IMAGE from '@salesforce/resourceUrl/deploy_changes_connect';
+import DEPLOY_CHANGES_PREVIEW_IMAGE from '@salesforce/resourceUrl/deploy_changes_preview';
+import DEPLOYMENT_STATUS_IMAGE from '@salesforce/resourceUrl/deployment_status';
 
 export default class FreeTrialGuide extends LightningElement {
     trialHeroImage = TRIAL_HERO;
@@ -73,8 +80,13 @@ export default class FreeTrialGuide extends LightningElement {
     vibesDeploy1Image = VIBES_DEPLOY_1_IMAGE;
     vibesDeploy2Image = VIBES_DEPLOY_2_IMAGE;
     vibesDashboardResultImage = VIBES_DASHBOARD_RESULT_IMAGE;
+    dxInspectorChangeListImage = DX_INSPECTOR_CHANGE_LIST_IMAGE;
+    deployChangesConnectImage = DEPLOY_CHANGES_CONNECT_IMAGE;
+    deployChangesPreviewImage = DEPLOY_CHANGES_PREVIEW_IMAGE;
+    deploymentStatusImage = DEPLOYMENT_STATUS_IMAGE;
     @track currentStep = 0;
     @track isLoading = false;
+    @track userName;
 
     steps = [
         { label: 'Welcome', value: '0' },
@@ -89,6 +101,28 @@ export default class FreeTrialGuide extends LightningElement {
 
     get currentStepValue() {
         return String(this.currentStep);
+    }
+
+    @wire(getRecord, { recordId: USER_ID, fields: [USERNAME_FIELD] })
+    wiredUser({ error, data }) {
+        if (data) {
+            this.userName = data.fields.Username.value;
+        } else if (error) {
+            // In case of error, leave userName undefined and fail silently in the UI.
+            // eslint-disable-next-line no-console
+            console.warn('Error loading current user record', error);
+        }
+    }
+
+    get hasUserName() {
+        return !!this.userName;
+    }
+
+    get trialExpiryDate() {
+        const today = new Date();
+        const expiry = new Date(today);
+        expiry.setDate(expiry.getDate() + 30);
+        return expiry.toLocaleDateString();
     }
 
     get stepsWithStatus() {
