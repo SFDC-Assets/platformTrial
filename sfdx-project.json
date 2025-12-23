@@ -2,7 +2,10 @@
   "packageDirectories": [
     {
       "path": "force-app",
-      "default":true
+      "default": true
+    },
+    {
+      "path": "wave-app"
     }
   ],
   "namespace": "",

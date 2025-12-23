@@ -1143,10 +1143,15 @@ code.code-block {
     display: flex;
     align-items: center;
     gap: 0.75rem;
-    background: linear-gradient(135deg, #f0e6fa 0%, #e8dff5 100%);
+    background: #fff8e6;
     border-radius: 8px;
     padding: 1rem;
-    border-left: 4px solid #9050e9;
+    border-left: 6px solid #ffb75d;
+}
+
+.prompt-card .prompt-icon {
+    flex-shrink: 0;
+    --slds-c-icon-color-foreground-default: #706e6b;
 }
 
 .prompt-card.featured {
@@ -1161,8 +1166,14 @@ code.code-block {
 
 .prompt-card span {
     font-size: 0.95rem;
-    color: #32325d;
+    color: #444;
+    font-style: normal;
+    line-height: 1.6;
+}
+
+.prompt-card span em {
     font-style: italic;
+    color: #2c2c2c;
 }
 
 /* Expected Result */
