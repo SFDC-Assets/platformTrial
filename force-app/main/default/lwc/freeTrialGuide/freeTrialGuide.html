@@ -25,12 +25,12 @@
                     <div class="step-content welcome-step">
                         <div class="hero-section">
                             <div class="hero-badge">FREE TRIAL</div>
-                            <img src={agentforceBanner} alt="Agentforce Platform 360" class="hero-banner" />
+                            <img src={agentforceBanner} alt="Agentforce 36O Platform" class="hero-banner" />
                             <p class="hero-tagline">Innovate fast, deploy securely, and protect your data.</p>
                         </div>
 
                         <div class="platform-intro">
-                            <p>Welcome to your free trial! The Agentforce 360 Platform is your unified platform to
+                            <p>Welcome to your free trial! The Agentforce 36O Platform is your unified platform to
                                 build, customize, and deploy powerful agents and applications on Salesforce.</p>
                             <p>Salesforce's built-in agent and application lifecycle management and governance tools
                                 help you build with confidence. Leverage the full power of Salesforce data and metadata;
@@ -71,7 +71,7 @@
                                 <div class="use-case-content">
                                     <p>Connected Executive Education (or CEE for short) is a fictitious company that
                                         delivers executive training courses to individuals and businesses around the
-                                        world. CEE uses the Agentforce 360 Platform to streamline and modernize their
+                                        world. CEE uses the Agentforce 36O Platform to streamline and modernize their
                                         executive learning programs with intelligent agents and apps.</p>
                                     <p>CEE built this custom application on Salesforce to manage courses, instructors,
                                         students, and enrollments. Agentforce helps them automate their operations,
@@ -81,7 +81,7 @@
                                 </div>
                             </div>
                             <div class="hero-image-container">
-                                <img src={trialHeroImage} alt="Agentforce Platform 360" class="hero-image" />
+                                <img src={trialHeroImage} alt="Agentforce 36O Platform" class="hero-image" />
                             </div>
                         </div>
 
@@ -164,9 +164,9 @@
                                 <p>The <strong>Courses</strong> object stores all offerings available in CEE's executive
                                     education catalog. Each record includes essential details such as category, delivery
                                     format, duration, and instructor information.</p>
-                                <p>When you open the Courses tab, you'll see a list of sample course records – like
-                                    <em>Executive Leadership Fundamentals</em> and <em>Digital Transformation
-                                        Strategy</em>. These records give you a realistic view of how a company like CEE
+                                <p>When you open the Courses tab, you'll see a list of sample course records – like &nbsp;
+                                    <em>Executive Leadership Fundamentals</em>, <em>Digital Transformation
+                                        Strategy</em>, and <em>Cybersecurity for Executives</em>. These records give you a realistic view of how a company like CEE
                                     might manage a dynamic course catalog inside Salesforce.
                                 </p>
                                 <div class="section-screenshot">
@@ -247,7 +247,7 @@
                                 <li>Return to <strong>Learning Management Home</strong> for a consolidated dashboard
                                 </li>
                             </ol>
-                            <p>Return to the Agentforce 360 Platform tab when you're ready to move on.</p>
+                            <p>Return to the Agentforce 36O Platform tab when you're ready to move on.</p>
                         </div>
                     </div>
                 </template>
@@ -276,29 +276,18 @@
                             <div class="intro-section">
                                 <p>We're going to show you how to quickly and easily customize an agent for the Learning
                                     Management app.</p>
-                                <p><strong>Steps include:</strong> Enable Agentforce → Create Topic → Add Apex Agent
+                                <p><strong>Steps include:</strong> Open Default Agent → Create Topic → Add Apex Agent
                                     Actions → Map Inputs and Outputs → Deactivate General CRM Agent</p>
                                 <p>You may wish to keep this tab open in a separate window to follow along.</p>
                             </div>
-                            <!-- Step 1: Enable Agentforce -->
+                            <!-- Step 1: Open the Default Agent -->
                             <div class="config-section">
                                 <div class="config-header">
                                     <span class="config-number">1</span>
-                                    <h3>Enable Agentforce</h3>
-                                </div>
-                                <ol class="numbered-steps">
-                                    <li>Go to <strong>Setup</strong> → <strong>Agentforce Agents</strong></li>
-                                    <li>Turn <strong>Agentforce</strong> &nbsp;<span class="status-on">ON</span></li>
-                                    <li>Enable <strong>"Enable the Agentforce (Default) Agent"</strong></li>
-                                    <li>Click <strong>Save</strong></li>
-                                </ol>
-                            </div>
-
-                            <!-- Step 2: Open the Default Agent -->
-                            <div class="config-section">
-                                <div class="config-header">
-                                    <span class="config-number">2</span>
                                     <h3>Open the Default Agent</h3>
+                                </div>
+                                <div class="preconfig-notice" style="margin-bottom: 1em;">
+                                    <p><strong>Note:</strong> If Agentforce is not already enabled, go to <strong>Setup</strong> → <strong>Agentforce Agents</strong>, turn <strong>Agentforce</strong> <span class="status-on">ON</span>, enable <strong>"Enable the Agentforce (Default) Agent"</strong>, and click <strong>Save</strong>.</p>
                                 </div>
                                 <ol class="numbered-steps">
                                     <li>Open <strong>Agentforce (Default)</strong></li>
@@ -310,10 +299,10 @@
                                 </div>
                             </div>
 
-                            <!-- Step 3: Create the Topic -->
+                            <!-- Step 2: Create the Topic -->
                             <div class="config-section">
                                 <div class="config-header">
-                                    <span class="config-number">3</span>
+                                    <span class="config-number">2</span>
                                     <h3>Create a New Topic</h3>
                                 </div>
                                 <p>Topics define specific conversation areas or knowledge domains an agent can handle.
@@ -325,8 +314,8 @@
                                         <strong>Next</strong> to skip templates. Templates are fantastic out-of-the-box
                                         Agentforce resources, but today we're going to create a custom topic.
                                     </li>
-                                    <li>Enter the topic details: Name, API Name, Classification Description, Scope, and
-                                        Instructions. We've provided these for you to copy and paste below.</li>
+                                    <li>Enter the topic details:<b>Name, API Name, Classification Description, Scope, and
+                                        Instructions.</b> We've provided these for you to copy and paste below.</li>
                                     <li>Click <strong>Next</strong> to continue</li>
                                 </ol>
 
@@ -364,10 +353,10 @@
                                 </div>
                             </div>
 
-                            <!-- Step 4: Create Agent Actions inside the Topic -->
+                            <!-- Step 3: Create Agent Actions inside the Topic -->
                             <div class="config-section">
                                 <div class="config-header">
-                                    <span class="config-number">4</span>
+                                    <span class="config-number">3</span>
                                     <h3>Add Agent Actions to the Topic</h3>
                                 </div>
                                 <p>Actions are the specific tasks or workflows that an agent can execute when triggered.
@@ -397,10 +386,10 @@
                                 </div>
                             </div>
 
-                            <!-- Step 5: Delete General CRM Topic -->
+                            <!-- Step 4: Delete General CRM Topic -->
                             <div class="config-section">
                                 <div class="config-header">
-                                    <span class="config-number">5</span>
+                                    <span class="config-number">4</span>
                                     <h3>Delete the "General CRM" Topic</h3>
                                 </div>
                                 <p>We don't need this topic for our agent, so we can delete it.</p>
@@ -411,10 +400,10 @@
                                 </ol>
                             </div>
 
-                            <!-- Step 6: Test Your Agent -->
+                            <!-- Step 5: Test Your Agent -->
                             <div class="config-section">
                                 <div class="config-header">
-                                    <span class="config-number">6</span>
+                                    <span class="config-number">5</span>
                                     <h3>You're Ready for Testing</h3>
                                 </div>
                                 <p>Great work! Your agent is ready to test and iterate on.</p>
@@ -454,7 +443,7 @@
                             <lightning-icon icon-name="standard:live_chat" size="large"
                                 class="step-icon"></lightning-icon>
                             <div class="step-header-text">
-                                <h2>Test Your Agent</h2>
+                                <h2>Test Agentforce</h2>
                                 <p class="step-description">Validate agent logic at scale using AI-generated test suites
                                 </p>
                             </div>
@@ -478,7 +467,7 @@
                                 </div>
                                 <p>Inside Agentforce Builder, look for the Batch Test button on the top navigation bar
                                     and click it.</p>
-                                <p>This opens the test creation modal for creating new test suites</p>
+                                <p>This opens the test creation modal for creating new test suites.</p>
                                 <div class="section-screenshot">
                                     <img src={agentbuilderBatchTestImage} alt="Batch Test Button"
                                         class="screenshot-image" />
@@ -570,7 +559,7 @@
                                 </div>
                                 <p>Thorough testing for any agent, app, or enhancement prevents bugs and errors from
                                     making their way into your production org, potentially disrupting your users or
-                                    customers. It's a critical part of good agent and app lifecycle management!</p>
+                                    customers. It's a critical part of good agent and app lifecycle management!</p><br/>
                                 <p>Now that you've tested, you're now ready to enhance the Learning Management app
                                     interface using Agentforce Vibes.</p>
                             </div>
@@ -998,6 +987,7 @@
                                     <h4>Wrap-Up</h4>
                                 </div>
                                 <p>Simple deployments made easier with DX Inspector help every Salesforce builder work faster without switching between tools.</p>
+                                <br/>
                                 <p>But we all know projects aren't done after deployment! Monitoring and observability are important to ensure your org and data are secure, and that your deployments perform as intended. Click <strong>"Next"</strong> to learn more about Event Monitoring.</p>
                             </div>
 
@@ -1021,7 +1011,7 @@
                             </div>
                         </div>
                         <div class="instruction-panel">
-                            <p class="intro-text">The <strong>ELO Analytics</strong> app gives you
+                            <p class="intro-text">The <strong>Event Monitoring: Event Log Analytics</strong> app gives you
                                 immediate visibility into what's happening inside your Salesforce org. It comes with a
                                 set of prebuilt dashboards powered by the EventLogFile object. As your org generates
                                 event data, the app automatically ingests it into datasets—so you can start exploring
@@ -1030,7 +1020,7 @@
                                 what each one helps you monitor.</p>
 
                             <div class="preconfig-notice">
-                                <p>Before you explore the <strong>ELO Analytics</strong> dashboards,
+                                <p>Before you explore the <strong>Event Monitoring: Event Log Analytics</strong> dashboards,
                                     follow the steps below to make sure your org is configured to generate, store, and
                                     stream some sample event data. Note that while we're currently in a pre-production
                                     org, customers use Event Monitoring across all of their production and sandbox orgs
@@ -1051,7 +1041,7 @@
                                         <h3>Enable Event Streaming &amp; Storage for Key Events</h3>
                                     </div>
                                     <ol class="numbered-steps">
-                                        <li>In <strong>Setup</strong>, search for <strong>Event Manager</strong>.</li>
+                                        <li>In <strong>Setup(click the gear icon in the top right)</strong>, search for <strong>Event Manager</strong>.</li>
                                         <li>From the list of events, locate:
                                             <ul class="sub-list">
                                                 <li><strong>API Anomaly Event</strong></li>
@@ -1119,7 +1109,7 @@
                                     </div>
                                     <p>To populate anomaly dashboards with meaningful data:</p>
                                     <ol class="numbered-steps">
-                                        <li>From <strong>App Launcher</strong>, search <strong>Test Threat Detection
+                                        <li>From <strong>App Launcher (the menu to the left of Learning Management in the nav bar)</strong>, search <strong>Test Threat Detection
                                                 Events</strong>.</li>
                                         <li>Select an <strong>Event Type</strong> (e.g., Credential Stuffing, Session
                                             Hijacking, Guest User Anomaly, Report Anomaly, API Anomaly, etc.)</li>
@@ -1150,13 +1140,13 @@
                             <div class="config-section">
                                 <div class="config-header">
                                     <span class="config-number">1</span>
-                                    <h3>Open the ELO Analytics App</h3>
+                                    <h3>Open the Event Monitoring: Event Log Analytics App</h3>
                                 </div>
                                 <ol class="numbered-steps">
                                     <li>From <strong>App Launcher</strong>, search for <strong>Analytics
                                             Studio</strong>.</li>
                                     <li>In the left navigation pane, click <strong>Browse</strong>.</li>
-                                    <li>Open the <strong>ELO Analytics</strong> App.</li>
+                                    <li>Open the <strong>Event Monitoring: Event Log Analytics</strong> App.</li>
                                     <li>From the list of dashboards, select <strong>Threats &amp; Access
                                             (Beta)</strong>.</li>
                                 </ol>
@@ -1339,7 +1329,7 @@
                         </div>
                         <div class="instruction-panel">
                             <div class="intro-section summary-congrats">
-                                <p>Congratulations! You've completed your Agentforce 360 Platform Free Trial journey in the Learning Management app. Let's take a moment to review what you've accomplished.</p>
+                                <p>Congratulations! You've completed your Agentforce 36O Platform Free Trial journey in the Learning Management app. Let's take a moment to review what you've accomplished.</p>
                             </div>
 
                             <div class="summary-section">
@@ -1362,9 +1352,9 @@
                             <div class="action-box highlight">
                                 <div class="action-box-header">
                                     <lightning-icon icon-name="utility:knowledge_base" size="small"></lightning-icon>
-                                    <h4>Continue Learning About the Agentforce 360 Platform</h4>
+                                    <h4>Continue Learning About the Agentforce 36O Platform</h4>
                                 </div>
-                                <p>Visit <a href="https://www.salesforce.com/platform" target="_blank">salesforce.com/platform</a> to read more about the deeply unified Agentforce 360 Platform, watch demos, and find more resources.</p>
+                                <p>Visit <a href="https://www.salesforce.com/platform" target="_blank">salesforce.com/platform</a> to read more about the deeply unified Agentforce 36O Platform, watch demos, and find more resources.</p>
                             </div>
 
                             <div class="action-box highlight">

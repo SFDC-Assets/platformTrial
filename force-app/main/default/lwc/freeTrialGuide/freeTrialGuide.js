@@ -143,10 +143,28 @@ export default class FreeTrialGuide extends LightningElement {
         });
     }
 
+    scrollToTop() {
+        // Use setTimeout to ensure DOM has updated after step change
+        // eslint-disable-next-line @lwc/lwc/no-async-operation
+        setTimeout(() => {
+            // Try scrolling the guide container
+            const container = this.template.querySelector('.guide-container');
+            if (container) {
+                container.scrollTop = 0;
+            }
+            // Scroll the window
+            window.scrollTo(0, 0);
+            // Also try scrolling the document body and html element
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        }, 0);
+    }
+
     handleStepClick(event) {
         const stepIndex = event.currentTarget.dataset.index;
         if (stepIndex !== undefined) {
             this.currentStep = parseInt(stepIndex, 10);
+            this.scrollToTop();
         }
     }
 
@@ -196,28 +214,33 @@ export default class FreeTrialGuide extends LightningElement {
     handleNext() {
         if (this.currentStep < 7) {
             this.currentStep++;
+            this.scrollToTop();
         }
     }
 
     handlePrevious() {
         if (this.currentStep > 0) {
             this.currentStep--;
+            this.scrollToTop();
         }
     }
 
     handleRestart() {
         this.currentStep = 0;
+        this.scrollToTop();
     }
 
     handleCardClick(event) {
         const step = parseInt(event.currentTarget.dataset.step, 10);
         if (!isNaN(step)) {
             this.currentStep = step;
+            this.scrollToTop();
         }
     }
 
     handleBackToWelcome() {
         this.currentStep = 0;
+        this.scrollToTop();
     }
 }
 
