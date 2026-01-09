@@ -24,11 +24,10 @@
                 <template if:true={isWelcome}>
                     <div class="step-content welcome-step">
                         <div class="hero-section">
-                            <div class="hero-badge">FREE TRIAL</div>
                             <img src={agentforceBanner} alt="Agentforce 36O Platform" class="hero-banner" />
+                            <br/>
                             <p class="hero-tagline">Innovate fast, deploy securely, and protect your data.</p>
                         </div>
-
                         <div class="platform-intro">
                             <p>Welcome to your free trial! The Agentforce 36O Platform is your unified platform to
                                 build, customize, and deploy powerful agents and applications on Salesforce.</p>
@@ -145,13 +144,15 @@
                         </div>
 
                         <div class="instruction-panel">
-                            <p class="intro-text">The Learning Management App is a fully configured, custom application
-                                that CEE built on the Agentforce 36O Platform. Before you start working with AI agents
-                                or metadata tools, take a brief tour of the core building blocks of this app inside this
-                                secure development environment. These custom objects, pages, and dashboards represent
-                                how CEE tracks courses, learners, and progress across their executive education
-                                programs. This application is a great example of what you can build on Salesforce – so
-                                get inspired!</p>
+                            <div class="intro-section">
+                                <p>The Learning Management App is a fully configured, custom application
+                                    that CEE built on the Agentforce 36O Platform. Before you start working with AI agents
+                                    or metadata tools, take a brief tour of the core building blocks of this app inside this
+                                    secure development environment. These custom objects, pages, and dashboards represent
+                                    how CEE tracks courses, learners, and progress across their executive education
+                                    programs. This application is a great example of what you can build on Salesforce – so
+                                    get inspired!</p>
+                            </div>
                         </div>
 
                         <!-- Courses Section -->
@@ -266,14 +267,14 @@
                                 <p class="step-description">Build and customize Agentforce with no code.</p>
                             </div>
                         </div>
-                        <p style="margin-bottom: 1em;">Agentforce helps you bring AI agents into your workflows and
-                            applications to improve
-                            productivity, with humans and agents working together.</p>
-                        <p style="margin-bottom: 1em;">CEE wants to build and customize their Agentforce in order to
-                            help their team manage
-                            courses, students, and enrollments for thousands of learners.</p>
                         <div class="instruction-panel">
                             <div class="intro-section">
+                                <p>Agentforce helps you bring AI agents into your workflows and
+                                    applications to improve
+                                    productivity, with humans and agents working together.</p>
+                                <p>CEE wants to build and customize their Agentforce in order to
+                                    help their team manage
+                                    courses, students, and enrollments for thousands of learners.</p>
                                 <p>We're going to show you how to quickly and easily customize an agent for the Learning
                                     Management app.</p>
                                 <p><strong>Steps include:</strong> Open Default Agent → Create Topic → Add Apex Agent
@@ -582,10 +583,12 @@
                             </div>
                         </div>
                         <div class="instruction-panel">
-                            <p class="intro-text">Vibe coding has come to Salesforce with the new Agentforce Vibes!
-                                Purpose-built for our platform, Agentforce Vibes is context-aware and understands your
-                                org's configuration and metadata. Use the Agentforce Vibes IDE to build faster and
-                                smarter with conversational AI.</p>
+                            <div class="intro-section">
+                                <p>Vibe coding has come to Salesforce with the new Agentforce Vibes!
+                                    Purpose-built for our platform, Agentforce Vibes is context-aware and understands your
+                                    org's configuration and metadata. Use the Agentforce Vibes IDE to build faster and
+                                    smarter with conversational AI.</p>
+                            </div>
 
                             <!-- Step 1: Launch the Agentforce Vibes IDE -->
                             <div class="config-section">
@@ -802,18 +805,20 @@
                         <div class="step-header">
                             <lightning-icon icon-name="utility:upload" size="large" class="step-icon"></lightning-icon>
                             <div class="step-header-text">
-                                <h2>Deploy Changes</h2>
-                                <p class="step-description">Promote your work using the DX Inspector</p>
+                                <h2>Deploy Securely</h2>
+                                <p class="step-description">Promote your work through the development pipeline using the DX Inspector</p>
                             </div>
                         </div>
                         <div class="instruction-panel">
-                            <p class="intro-text">Now that you have successfully built and verified your solution using
-                                Agentforce Vibes, it is time to move your work from the scratch org to your target
-                                environment.</p>
-                            <p class="intro-text">Instead of using the command line, we will use the <strong>DX
-                                    Inspector</strong> to manage this process visually. This unified interface allows
-                                you to select and deploy both the structural changes and the configuration records
-                                needed to keep your application running smoothly.</p>
+                            <div class="intro-section">
+                                <p>Now that you have successfully built and verified your new app component using
+                                    Agentforce Vibes, it's time to move your work from this scratch org to your target
+                                    environment.</p>
+                                <p>Instead of using the command line, we will use the DX
+                                        Inspector to manage this process visually. This unified interface allows
+                                    you to select and deploy both the structural changes and the configuration records
+                                    needed to keep your application running smoothly.</p>
+                            </div>
 
                             <!-- Metadata and Data Deployment -->
                             <div class="em-section">
@@ -828,8 +833,12 @@
                                         relies on to function.</li>
                                 </ul>
                                 <div class="info-box release-status">
-                                    <lightning-icon icon-name="utility:info" size="x-small"></lightning-icon>
-                                    <span><strong>Release status:</strong> Metadata Deployment is available in <strong>open beta</strong> and Data Deployment is available as a <strong>developer preview/pilot</strong>. Features in beta or pilot are subject to change and are governed by Salesforce's pilot and beta terms.</span>
+                                    <div class="release-status-content">
+                                        <div class="release-status-section">
+                                            <p><strong>Release status:</strong> Metadata Deployment is available in <strong>open beta</strong> and Data Deployment is available as a <strong>developer preview/pilot</strong>.</p>
+                                            <p>Features in beta or pilot are subject to change and are governed by Salesforce's pilot and beta terms.</p>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
 
@@ -850,7 +859,7 @@
                                     <ol class="numbered-steps">
                                         <li>Click <a href="http://hosted-scratch.herokuapp.com/launch?template=https://github.com/SFDC-Assets/platformTrial/tree/jan26-trial-experience" target="_blank" rel="noopener noreferrer">here</a> to create a new target org (opens in a new tab)</li>
                                         <li>Wait for the org to be created and loaded — this process takes a couple of minutes. Authentication happens automatically.</li>
-                                        <li>Keep this target org tab open — you will use it later in the deployment process</li>
+                                        <li>Keep this target org tab open. You will use it later in the deployment process</li>
                                     </ol>
                                     <p class="preconfig-note">This target org will receive the metadata and data you deploy from your current scratch org.</p>
                                 </div>
@@ -864,8 +873,7 @@
                                     <p class="intro-text">Before accessing the DX Inspector, ensure the org is authorized
                                         for these operations.</p>
                                     <ol class="numbered-steps">
-                                        <li>In your Salesforce scratch org, click the <strong>Setup gear icon</strong> (top
-                                            right)</li>
+                                        <li>From this org, click the <strong>Setup gear icon</strong> (top right)</li>
                                         <li>In the Quick Find box, enter <code>Change Management</code></li>
                                         <li>Select <strong>Change Management</strong></li>
                                         <li>Toggle <strong>On</strong> for <strong>Org-to-org metadata deployment
@@ -888,10 +896,9 @@
                                 </div>
                                 <p class="intro-text">Access the dedicated UI for managing your deployment payload.</p>
                                 <ol class="numbered-steps">
-                                    <li>Open <strong>DX Inspector</strong> — the first time you might be asked to accept the terms and proceed.</li>
-                                    <li>If prompted, review the access permissions and click <strong>Allow</strong> to grant access to ALMDevOpsConnectedApp.</li>
-                                    <li>Navigate to the <strong>Change Management</strong> page</li>
-                                    <li>Click on the <strong>Change List</strong> tab to begin selecting items</li>
+                                    <li>From this org, Open DX Inspector by clicking the star and menu icon in the top left of your screen (you might be asked to accept the terms and proceed)</li>
+                                    <li>Navigate to the Change Management page</li>
+                                    <li>Click on the Change List tab to begin selecting items</li>
                                 </ol>
                             </div>
 
@@ -903,17 +910,17 @@
                                 </div>
                                 <p class="intro-text">First, bundle the structural changes by selecting the specific Apex classes you want to deploy.</p>
                                 <ol class="numbered-steps">
-                                    <li>Click the <strong>Metadata</strong> tab (if not already selected)</li>
-                                    <li>In the Change List, locate and select the checkbox next to <strong>LearningManagementController</strong> (ApexClass)</li>
-                                    <li>Select the checkbox next to <strong>LearningManagementControllerTest</strong> (ApexClass)</li>
-                                    <li>Click the <strong>Deploy Options...</strong> button</li>
+                                    <li>Click the Metadata tab, if not already selected</li>
+                                    <li>In the Change List, locate and select the checkbox next to LearningManagementController (ApexClass)</li>
+                                    <li>Select the checkbox next to LearningManagementControllerTest (ApexClass)</li>
+                                    <li>Click the Deploy Options… button</li>
                                 </ol>
                                 <div class="section-screenshot">
                                     <img src={dxInspectorChangeListImage} alt="Select Metadata for Deployment" class="screenshot-image" />
                                 </div>
                             </div>
 
-                            <!-- Deploy to the Target Org -->
+                            <!-- Connect to the Target Org -->
                             <div class="config-section">
                                 <div class="config-header">
                                     <span class="config-number">3</span>
@@ -921,12 +928,12 @@
                                 </div>
                                 <p class="intro-text">Connect to your target org using its credentials to enable deployment.</p>
                                 <ol class="numbered-steps">
-                                    <li>In the <strong>Deploy Changes</strong> window, if you don't see your target org listed under "Existing Target Org", proceed to connect a new org.</li>
-                                    <li>In the <strong>New Target Org</strong> section, enter an <strong>Environment Name</strong> (e.g., "target-org")</li>
-                                    <li>Select the radio button for <strong>Sandbox or scratch org</strong></li>
-                                    <li>Click the <strong>Connect</strong> button</li>
+                                    <li>In the Deploy Changes window, if you don't see your target org listed under "Existing Target Org," proceed to connect to a new org.</li>
+                                    <li>In the New Target Org section, enter an Environment Name (e.g., "target-org")</li>
+                                    <li>Select the radio button for Sandbox or scratch org</li>
+                                    <li>Click the Connect button</li>
                                     <li>You will be redirected to the Salesforce login window. Enter your target org credentials (username and password) and log in</li>
-                                    <li>If prompted with an "Allow Access?" screen, review the permissions and click <strong>Allow</strong> to grant access</li>
+                                    <li>If prompted with an "Allow Access?" screen, review the permissions and click Allow to grant access</li>
                                     <li>Once connected, you'll return to the Deploy Changes window with your target org now listed</li>
                                 </ol>
                                 <div class="section-screenshot">
@@ -940,18 +947,18 @@
                                     <span class="config-number">4</span>
                                     <h3>Deploy the Changes</h3>
                                 </div>
-                                <p class="intro-text">Review the deployment preview and deploy your selected metadata.</p>
+                                <p class="intro-text">Review the deployment preview and then deploy your selected metadata.</p>
                                 <ol class="numbered-steps">
-                                    <li>In the <strong>Deploy Changes</strong> window, select your connected <strong>target org</strong> from the Existing Target Org section</li>
-                                    <li>Click <strong>Next</strong> to proceed to the deployment preview</li>
-                                    <li>Review the <strong>Preview</strong> section which shows:
+                                    <li>In the Deploy Changes window, select your connected target org from the Existing Target Org section</li>
+                                    <li>Click Next to proceed to the deployment preview</li>
+                                    <li>Review the Preview section which shows:
                                         <ul class="feature-list">
-                                            <li><strong>Source Org</strong> (your current org) and <strong>Target Org</strong> (where you're deploying)</li>
+                                            <li>Source Org (your current org) and Target Org (where you're deploying)</li>
                                             <li>The metadata components being deployed (LearningManagementController and LearningManagementControllerTest)</li>
                                         </ul>
                                     </li>
-                                    <li>Verify the <strong>Metadata</strong> table shows the correct files with Operation type "modify"</li>
-                                    <li>Click the <strong>Deploy</strong> button to start the deployment</li>
+                                    <li>Verify the Metadata table shows the correct files with Operation type "modify"</li>
+                                    <li>Click the Deploy button to start the deployment</li>
                                 </ol>
                                 <div class="section-screenshot">
                                     <img src={deployChangesPreviewImage} alt="Deploy Changes Preview" class="screenshot-image" />
@@ -964,12 +971,12 @@
                                     <span class="config-number">5</span>
                                     <h3>Monitor and Verify Deployment</h3>
                                 </div>
-                                <p class="intro-text">Confirm that the deployment completed successfully in the target org.</p>
+                                <p class="intro-text">Confirm that the deployment completed successfully in the target org</p>
                                 <ol class="numbered-steps">
-                                    <li>After clicking Deploy, the deployment process will begin. Wait for it to complete.</li>
-                                    <li>Navigate to the target org and go to <strong>Setup</strong></li>
-                                    <li>In Setup, search for and open <strong>Deployment Status</strong></li>
-                                    <li>You will see the deployment listed with status <strong>"Deployment Succeeded"</strong></li>
+                                    <li>After clicking Deploy, the deployment process will begin. Wait for it to complete</li>
+                                    <li>Navigate to the target org and go to Setup</li>
+                                    <li>In Setup, search for and open Deployment Status</li>
+                                    <li>You will see the deployment listed with status "Deployment Succeeded"</li>
                                     <li>Verify that both LearningManagementController and LearningManagementControllerTest are now available in the target org</li>
                                 </ol>
                                 <div class="section-screenshot">
@@ -978,7 +985,7 @@
                             </div>
 
                             <!-- Data Deployment Note -->
-                            <p class="intro-text" style="margin-top: 1.5rem;">While this guide focused on moving structural metadata, the DX Inspector also supports <strong>Data Deployment (Developer Preview)</strong>. This allows you to migrate the actual configuration records—like course data and relationships—required for your app to function. To explore how to preserve record relationships and map external IDs during a data migration, check out the official Salesforce <a href="https://help.salesforce.com/s/articleView?language=en_US&id=platform.metadata_and_data_deployment.htm&type=5" target="_blank">documentation</a> and try it for yourself!</p>
+                            <p class="intro-text" style="margin-top: 1.5rem;">While this guide focused on moving structural metadata, the DX Inspector also supports Data Deployment (Developer Preview). This allows you to migrate the actual configuration records, like course data and relationships, required for your app to function. To explore how to preserve record relationships and map external IDs during a data migration, check out the official Salesforce documentation and try it for yourself!</p>
 
                             <!-- Wrap Up -->
                             <div class="action-box highlight">
@@ -988,7 +995,7 @@
                                 </div>
                                 <p>Simple deployments made easier with DX Inspector help every Salesforce builder work faster without switching between tools.</p>
                                 <br/>
-                                <p>But we all know projects aren't done after deployment! Monitoring and observability are important to ensure your org and data are secure, and that your deployments perform as intended. Click <strong>"Next"</strong> to learn more about Event Monitoring.</p>
+                                <p>But we all know projects aren't done after deployment! Monitoring and observability are important to ensure your org and data are secure, and that your deployments perform as intended. Click "Next" to learn more about Event Monitoring.</p>
                             </div>
 
                         </div>
@@ -1007,17 +1014,19 @@
                                 class="step-icon"></lightning-icon>
                             <div class="step-header-text">
                                 <h2>Event Monitoring</h2>
-                                <p class="step-description">Track and analyze changes in your org</p>
+                                <p class="step-description">Observe and analyze changes and activity in your org, from users and agents.</p>
                             </div>
                         </div>
                         <div class="instruction-panel">
-                            <p class="intro-text">The <strong>Event Monitoring: Event Log Analytics</strong> app gives you
-                                immediate visibility into what's happening inside your Salesforce org. It comes with a
-                                set of prebuilt dashboards powered by the EventLogFile object. As your org generates
-                                event data, the app automatically ingests it into datasets—so you can start exploring
-                                insights right away.</p>
-                            <p class="intro-text">In this step, let's walk through three key dashboards and understand
-                                what each one helps you monitor.</p>
+                            <div class="intro-section">
+                                <p>The Event Monitoring: Event Log Analytics app gives you
+                                    immediate visibility into what's happening inside your Salesforce org. It comes with a
+                                    set of prebuilt dashboards powered by the EventLogFile object. As your org generates
+                                    event data, the app automatically ingests it into datasets—so you can start exploring
+                                    insights right away.</p>
+                                <p>In this step, let's walk through three key dashboards and understand
+                                    what each one helps you monitor.</p>
+                            </div>
 
                             <div class="preconfig-notice">
                                 <p>Before you explore the <strong>Event Monitoring: Event Log Analytics</strong> dashboards,

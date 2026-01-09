@@ -237,7 +237,7 @@
 /* Welcome Step */
 .welcome-step .hero-section {
     text-align: center;
-    padding: 1.25rem 0 1.5rem;
+    padding: 1.25rem 0 0.5rem;
 }
 
 .hero-badge {
@@ -255,10 +255,15 @@
 
 .hero-banner {
     width: 100%;
-    max-width: 100%;
     height: auto;
     margin: 0.5rem 0;
     display: block;
+    object-fit: cover;
+    border-radius: 8px;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: auto;
+    image-rendering: high-quality;
+    -ms-interpolation-mode: bicubic;
 }
 
 .hero-tagline {
@@ -274,7 +279,7 @@
     background: #fff;
     border-radius: 12px;
     padding: 1.5rem 1.75rem;
-    margin: 1.25rem 0;
+    margin: 0.5rem 0 1.25rem 0;
     border: 1px solid #e5e5e5;
 }
 
@@ -295,6 +300,26 @@
     border-radius: 8px;
     border-left: 3px solid #ba8b2d;
     margin-top: 1rem !important;
+}
+
+/* Video Container */
+.video-container {
+    margin: 1.5rem 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    height: 0;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
 }
 
 /* Use Case Section */
@@ -762,7 +787,7 @@
     padding: 1.5rem;
     background: #f8f9fa;
     border-radius: 8px;
-    border-left: 4px solid #143b58;
+    border-left: 4px solid #8B6914;
 }
 
 .intro-section p {
@@ -777,7 +802,7 @@
 }
 
 .intro-section strong {
-    color: #143b58;
+    color: #8B6914;
     font-weight: 600;
 }
 
@@ -1103,8 +1128,9 @@ code.code-block {
     border: none;
     border-left: 4px solid #143b58;
     border-radius: 8px;
-    padding: 1rem 1.25rem;
-    margin-top: 1rem;
+    padding: 1.25rem 1.5rem;
+    margin-top: 1.5rem;
+    margin-bottom: 1rem;
 }
 
 .info-box.release-status lightning-icon {
@@ -1119,10 +1145,22 @@ code.code-block {
     color: #143b58;
 }
 
-.info-box.release-status span {
+.info-box.release-status .release-status-content {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
     color: #333;
-    line-height: 1.6;
-    font-size: 0.95rem;
+    line-height: 1.7;
+    font-size: 0.9rem;
+}
+
+.info-box.release-status .release-status-section {
+    margin: 0;
+}
+
+.info-box.release-status strong {
+    color: #143b58;
+    font-weight: 600;
 }
 
 /* Prompt Section */
@@ -1426,11 +1464,6 @@ code.code-block {
 /* Event Monitoring Section Styles */
 .em-section {
     margin-bottom: 2rem;
-    padding: 1.5rem;
-    background: #ffffff;
-    border-radius: 12px;
-    border-left: 4px solid #143b58;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .em-section h3 {

@@ -4,6 +4,7 @@ import USER_ID from '@salesforce/user/Id';
 import USERNAME_FIELD from '@salesforce/schema/User.Username';
 import TRIAL_HERO from '@salesforce/resourceUrl/trial_hero';
 import AGENTFORCE_BANNER from '@salesforce/resourceUrl/agentforce360_banner';
+import PLATFORM_ORG_FREE_TRIAL_IMAGE from '@salesforce/resourceUrl/platform_org_free_trial_image';
 import COURSES_IMAGE from '@salesforce/resourceUrl/courses';
 import STUDENTS_IMAGE from '@salesforce/resourceUrl/students';
 import ENROLLMENTS_IMAGE from '@salesforce/resourceUrl/enrollments';
@@ -45,7 +46,7 @@ import DEPLOYMENT_STATUS_IMAGE from '@salesforce/resourceUrl/deployment_status';
 
 export default class FreeTrialGuide extends LightningElement {
     trialHeroImage = TRIAL_HERO;
-    agentforceBanner = AGENTFORCE_BANNER;
+    agentforceBanner = PLATFORM_ORG_FREE_TRIAL_IMAGE;
     coursesImage = COURSES_IMAGE;
     studentsImage = STUDENTS_IMAGE;
     enrollmentsImage = ENROLLMENTS_IMAGE;
