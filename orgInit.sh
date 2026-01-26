@@ -5,7 +5,7 @@
 # Note: Requires sourceApiVersion: "66.0" in sfdx-project.json for Wave dashboards
 # echo "Creating scratch org..."
 sf demoutil org create scratch -f config/project-scratch-def.json -d 5 -s -p flow -e platformfreetrial.demo
-# sf org create scratch --definition-file config/project-scratch-def.json --duration-days 30 --target-dev-hub alm_demo_hub_org_2 --set-default --alias cee-scratch-8
+#sf org create scratch --definition-file config/project-scratch-def.json --duration-days 30 --target-dev-hub alm_demo_hub_org_2 --set-default --alias cee-scratch-11
 
 # Deploy everything except Wave (Wave needs permissions first)
 # echo "Deploying metadata (excluding Wave)..."
@@ -15,6 +15,8 @@ sf project deploy start --manifest manifest/base-package.xml
 # echo "Assigning permission sets..."
 sf org assign permset -n ConnectedExecutiveEducationAccess 
 sf org assign permset -n EventMonitoringPermSet
+sf org assign permset -n EinsteinAnalyticsPlusAdmin
+sf org assign permset -n EinsteinAnalyticsPlusUser
 
 
 # Wait a moment for permissions to propagate
@@ -30,6 +32,16 @@ sf project deploy start --source-dir wave-app
 sf data tree import -p data/masterImportPlan.json
 
 sf demoutil user password set -p salesforce1 -g User -l User
+
+# Set user profile photo using REST API
+ACCESS_TOKEN=$(sf org display --json | jq -r '.result.accessToken')
+INSTANCE_URL=$(sf org display --json | jq -r '.result.instanceUrl')
+
+if [ -f "assets/astro-profile.png" ]; then
+    curl -s -X POST "${INSTANCE_URL}/services/data/v65.0/connect/user-profiles/me/photo" \
+        -H "Authorization: Bearer ${ACCESS_TOKEN}" \
+        -F "fileUpload=@assets/astro-profile.png;type=image/png"
+fi
 
 # Open the org
 # echo "Opening org..."
