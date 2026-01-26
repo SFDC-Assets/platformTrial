@@ -13,10 +13,10 @@ sf project deploy start --manifest manifest/base-package.xml
 
 # Assign permission sets
 # echo "Assigning permission sets..."
-sf org assign permset -n ConnectedExecutiveEducationAccess 
-sf org assign permset -n EventMonitoringPermSet
-sf org assign permset -n EinsteinAnalyticsPlusAdmin
-sf org assign permset -n EinsteinAnalyticsPlusUser
+sf org assign permset -n ConnectedExecutiveEducationAccess || true
+sf org assign permset -n EventMonitoringPermSet || true
+sf org assign permset -n EinsteinAnalyticsPlusAdmin || true
+sf org assign permset -n EinsteinAnalyticsPlusUser || true
 
 
 # Wait a moment for permissions to propagate
@@ -33,14 +33,16 @@ sf data tree import -p data/masterImportPlan.json
 
 sf demoutil user password set -p salesforce1 -g User -l User
 
-# Set user profile photo using REST API
-ACCESS_TOKEN=$(sf org display --json | jq -r '.result.accessToken')
-INSTANCE_URL=$(sf org display --json | jq -r '.result.instanceUrl')
-
+# Set user profile photo using REST API (if asset exists)
 if [ -f "assets/astro-profile.png" ]; then
-    curl -s -X POST "${INSTANCE_URL}/services/data/v65.0/connect/user-profiles/me/photo" \
-        -H "Authorization: Bearer ${ACCESS_TOKEN}" \
-        -F "fileUpload=@assets/astro-profile.png;type=image/png"
+    ACCESS_TOKEN=$(sf org display --json | jq -r '.result.accessToken')
+    INSTANCE_URL=$(sf org display --json | jq -r '.result.instanceUrl')
+    
+    if [ -n "$ACCESS_TOKEN" ] && [ -n "$INSTANCE_URL" ]; then
+        curl -s -X POST "${INSTANCE_URL}/services/data/v65.0/connect/user-profiles/me/photo" \
+            -H "Authorization: Bearer ${ACCESS_TOKEN}" \
+            -F "fileUpload=@assets/astro-profile.png;type=image/png" || true
+    fi
 fi
 
 # Open the org
