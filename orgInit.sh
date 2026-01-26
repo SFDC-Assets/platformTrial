@@ -33,17 +33,8 @@ sf data tree import -p data/masterImportPlan.json
 
 sf demoutil user password set -p salesforce1 -g User -l User
 
-# Set user profile photo using REST API (if asset exists)
-if [ -f "assets/astro-profile.png" ]; then
-    ACCESS_TOKEN=$(sf org display --json | jq -r '.result.accessToken')
-    INSTANCE_URL=$(sf org display --json | jq -r '.result.instanceUrl')
-    
-    if [ -n "$ACCESS_TOKEN" ] && [ -n "$INSTANCE_URL" ]; then
-        curl -s -X POST "${INSTANCE_URL}/services/data/v65.0/connect/user-profiles/me/photo" \
-            -H "Authorization: Bearer ${ACCESS_TOKEN}" \
-            -F "fileUpload=@assets/astro-profile.png;type=image/png" || true
-    fi
-fi
+# Set user profile photo
+sfdx shane:user:photo -f assets/astro-profile.png -l User
 
 # Open the org
 # echo "Opening org..."
