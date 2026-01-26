@@ -92,14 +92,27 @@ public with sharing class EnrollmentLookupAction {
                 result.enrollmentId = enrollment.Id;
                 result.resultsFound = true;
                 
-                List<String> summaryParts = new List<String>();
+                // Build detailed summary for each enrollment
+                List<String> enrollmentSummaries = new List<String>();
                 for (Enrollment__c e : enrollments) {
-                    String studentName = ((e.Student__r != null && e.Student__r.First_Name__c != null ? e.Student__r.First_Name__c : '') + 
-                                         ' ' + (e.Student__r != null && e.Student__r.Last_Name__c != null ? e.Student__r.Last_Name__c : '')).trim();
-                    String courseName = e.Course__r != null && e.Course__r.Title__c != null ? e.Course__r.Title__c : 'Unknown Course';
-                    summaryParts.add(studentName + ' in ' + courseName);
+                    String studentFullName = ((e.Student__r != null && e.Student__r.First_Name__c != null ? e.Student__r.First_Name__c : '') + 
+                                             ' ' + (e.Student__r != null && e.Student__r.Last_Name__c != null ? e.Student__r.Last_Name__c : '')).trim();
+                    String courseName = e.Course__r != null && e.Course__r.Title__c != null ? e.Course__r.Title__c : 'N/A';
+                    List<String> details = new List<String>();
+                    details.add('• Enrollment Number: ' + (e.Name != null ? e.Name : 'N/A'));
+                    details.add('• Student: ' + (String.isNotBlank(studentFullName) ? studentFullName : 'N/A'));
+                    details.add('• Course: ' + courseName);
+                    details.add('• Status: ' + (e.Status__c != null ? e.Status__c : 'N/A'));
+                    details.add('• Progress: ' + (e.Progress__c != null ? String.valueOf(e.Progress__c.intValue()) + '%' : 'N/A'));
+                    details.add('• Enrollment Date: ' + (e.Enrollment_Date__c != null ? String.valueOf(e.Enrollment_Date__c) : 'N/A'));
+                    enrollmentSummaries.add(String.join(details, '\n'));
                 }
-                result.resultSummary = 'Found ' + enrollments.size() + ' enrollment(s): ' + String.join(summaryParts, ', ');
+                
+                if (enrollments.size() == 1) {
+                    result.resultSummary = 'Here are the details for the enrollment:\n' + enrollmentSummaries[0];
+                } else {
+                    result.resultSummary = 'Found ' + enrollments.size() + ' enrollments matching "' + request.searchQuery + '":\n\n' + String.join(enrollmentSummaries, '\n\n');
+                }
             }
             results.add(result);
         }

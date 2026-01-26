@@ -16,9 +16,9 @@ import EVENT_MONITORING_SETTINGS_IMAGE from '@salesforce/resourceUrl/eventmonito
 import TEST_THREAT_EVENTS_IMAGE from '@salesforce/resourceUrl/testthreatdetectionevents';
 import EINSTEIN_SETUP_IMAGE from '@salesforce/resourceUrl/einstein_setup';
 import AGENTFORCE_BUILDER_IMAGE from '@salesforce/resourceUrl/agentforce_builder';
-import TOPIC_CREATION_IMAGE from '@salesforce/resourceUrl/topiccreation';
-import AGENT_ACTION_IMAGE from '@salesforce/resourceUrl/agentaction';
-import AGENT_BUILDER_TEST_IMAGE from '@salesforce/resourceUrl/agentbuildertest';
+import TOPIC_CREATION_IMAGE from '@salesforce/resourceUrl/newtopiccreation';
+import AGENT_ACTION_IMAGE from '@salesforce/resourceUrl/agentactionimage';
+import AGENT_BUILDER_TEST_IMAGE from '@salesforce/resourceUrl/agentresponse';
 import DEPLOY_IMAGE from '@salesforce/resourceUrl/deploy';
 import CHANGE_MANAGEMENT_IMAGE from '@salesforce/resourceUrl/changemanagement';
 import AFV_IMAGE from '@salesforce/resourceUrl/afv';
@@ -43,6 +43,12 @@ import DX_INSPECTOR_CHANGE_LIST_IMAGE from '@salesforce/resourceUrl/dx_inspector
 import DEPLOY_CHANGES_CONNECT_IMAGE from '@salesforce/resourceUrl/deploy_changes_connect';
 import DEPLOY_CHANGES_PREVIEW_IMAGE from '@salesforce/resourceUrl/deploy_changes_preview';
 import DEPLOYMENT_STATUS_IMAGE from '@salesforce/resourceUrl/deployment_status';
+import AGENTFORCE_AGENT_SETUP_IMAGE from '@salesforce/resourceUrl/agentforceagentsetup';
+import NEW_AGENT_CREATION_IMAGE from '@salesforce/resourceUrl/new_agent_creation';
+import EMPLOYEE_AGENT_IMAGE from '@salesforce/resourceUrl/employeeagent';
+import UNCHECK_GEN_FAQ_IMAGE from '@salesforce/resourceUrl/uncheckgenfaq';
+import AGENT_DESC_IMAGE from '@salesforce/resourceUrl/agentdesc';
+import IGNORE_WARNINGS_IMAGE from '@salesforce/resourceUrl/ignorewarnings';
 
 export default class FreeTrialGuide extends LightningElement {
     trialHeroImage = TRIAL_HERO;
@@ -85,6 +91,12 @@ export default class FreeTrialGuide extends LightningElement {
     deployChangesConnectImage = DEPLOY_CHANGES_CONNECT_IMAGE;
     deployChangesPreviewImage = DEPLOY_CHANGES_PREVIEW_IMAGE;
     deploymentStatusImage = DEPLOYMENT_STATUS_IMAGE;
+    agentforceAgentSetupImage = AGENTFORCE_AGENT_SETUP_IMAGE;
+    newAgentCreationImage = NEW_AGENT_CREATION_IMAGE;
+    employeeAgentImage = EMPLOYEE_AGENT_IMAGE;
+    uncheckGenFaqImage = UNCHECK_GEN_FAQ_IMAGE;
+    agentDescImage = AGENT_DESC_IMAGE;
+    ignoreWarningsImage = IGNORE_WARNINGS_IMAGE;
     @track currentStep = 0;
     @track isLoading = false;
     @track userName;

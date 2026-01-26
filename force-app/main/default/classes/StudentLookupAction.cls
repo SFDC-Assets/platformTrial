@@ -87,13 +87,24 @@ public with sharing class StudentLookupAction {
                 result.studentId = student.Id;
                 result.resultsFound = true;
                 
-                List<String> summaryParts = new List<String>();
+                // Build detailed summary for each student
+                List<String> studentSummaries = new List<String>();
                 for (Student__c s : students) {
-                    String name = ((s.First_Name__c != null ? s.First_Name__c : '') + ' ' + (s.Last_Name__c != null ? s.Last_Name__c : '')).trim();
-                    String company = s.Company__c != null ? ' (' + s.Company__c + ')' : '';
-                    summaryParts.add(name + company);
+                    String fullName = ((s.First_Name__c != null ? s.First_Name__c : '') + ' ' + (s.Last_Name__c != null ? s.Last_Name__c : '')).trim();
+                    List<String> details = new List<String>();
+                    details.add('• Name: ' + (String.isNotBlank(fullName) ? fullName : 'N/A'));
+                    details.add('• Email: ' + (s.Email__c != null ? s.Email__c : 'N/A'));
+                    details.add('• Company: ' + (s.Company__c != null ? s.Company__c : 'N/A'));
+                    details.add('• Role: ' + (s.Role__c != null ? s.Role__c : 'N/A'));
+                    details.add('• Status: ' + (s.Status__c != null ? s.Status__c : 'N/A'));
+                    studentSummaries.add(String.join(details, '\n'));
                 }
-                result.resultSummary = 'Found ' + students.size() + ' student(s): ' + String.join(summaryParts, ', ');
+                
+                if (students.size() == 1) {
+                    result.resultSummary = 'Here are the details for student "' + result.studentName + '":\n' + studentSummaries[0];
+                } else {
+                    result.resultSummary = 'Found ' + students.size() + ' students matching "' + request.searchQuery + '":\n\n' + String.join(studentSummaries, '\n\n');
+                }
             }
             results.add(result);
         }

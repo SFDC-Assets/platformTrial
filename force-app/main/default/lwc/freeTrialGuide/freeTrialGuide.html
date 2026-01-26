@@ -37,11 +37,10 @@
                                 deployments securely; and keep your org, data, and agents secure with enterprise-grade
                                 visibility.</p>
                             <p class="trial-highlight">With this free trial, you get hands-on access to &nbsp;
-                                <strong>Agentforce Builder</strong>, <strong>Agentforce Testing Center</strong>,
+                                <strong>Agentforce Builder</strong>, <strong>Agentforce Testing Center</strong>,&nbsp;
                                 <strong>Agentforce Vibes</strong>, <strong>Metadata Deployment</strong>, <strong>Event
-                                    Monitoring</strong>, and a fully functional sample application – giving you
-                                everything you need to explore how enterprise apps and agents are built, secured, and
-                                delivered on Salesforce.
+                                    Monitoring</strong>, and a fully functional sample application custom AI application – giving you everything you need to innovate fast, deploy securely, and protect your data on Salesforce. 
+
                             </p>
                         </div>
 
@@ -194,7 +193,7 @@
                                 <p>The <strong>Students</strong> object captures learner profiles for individuals
                                     enrolled in CEE's executive programs. Each profile includes the learner's name,
                                     role, organization, contact information, and enrollment status.</p>
-                                <p>Opening a student record like <em>STU-0059 (Lisa Moore)</em> shows:</p>
+                                <p>Opening a student record like <strong>STU-0059 (Lisa Moore)</strong> shows:</p>
                                 <ul class="feature-list">
                                     <li>Student details such as company and job title</li>
                                     <li>Contact information used for communication and automated workflows</li>
@@ -269,35 +268,46 @@
                         </div>
                         <div class="instruction-panel">
                             <div class="intro-section">
-                                <p>Agentforce helps you bring AI agents into your workflows and
-                                    applications to improve
-                                    productivity, with humans and agents working together.</p>
-                                <p>CEE wants to build and customize their Agentforce in order to
-                                    help their team manage
-                                    courses, students, and enrollments for thousands of learners.</p>
-                                <p>We're going to show you how to quickly and easily customize an agent for the Learning
-                                    Management app.</p>
-                                <p><strong>Steps include:</strong> Open Default Agent → Create Topic → Add Apex Agent
-                                    Actions → Map Inputs and Outputs → Deactivate General CRM Agent</p>
+                                <p>Agentforce helps you bring AI agents into your workflows and applications to improve productivity, with humans and agents working together. CEE wants to build and customize their Agentforce in order to help their team manage courses, students, and enrollments for thousands of learners. We're going to show you how to quickly and easily customize an agent for the Learning Management app.</p>
                                 <p>You may wish to keep this tab open in a separate window to follow along.</p>
                             </div>
-                            <!-- Step 1: Open the Default Agent -->
+                            <!-- Step 1: Create an Agentforce Employee Agent and open Agentforce Builder -->
                             <div class="config-section">
                                 <div class="config-header">
                                     <span class="config-number">1</span>
-                                    <h3>Open the Default Agent</h3>
+                                    <h3>Create an Agentforce Employee Agent and open Agentforce Builder</h3>
                                 </div>
+                                <p>Let's create an Agentforce Employee Agent and get into Agentforce Builder.</p>
+                                <p>In the upper right hand of this screen, click the gear icon to go to <strong>Setup</strong>.</p>
+                                <p>Search for <strong>"Agentforce Agents"</strong>.</p>
                                 <div class="preconfig-notice" style="margin-bottom: 1em;">
-                                    <p><strong>Note:</strong> If Agentforce is not already enabled, go to <strong>Setup</strong> → <strong>Agentforce Agents</strong>, turn <strong>Agentforce</strong> <span class="status-on">ON</span>, enable <strong>"Enable the Agentforce (Default) Agent"</strong>, and click <strong>Save</strong>.</p>
+                                    <p><strong>Note:</strong> Go to <strong>Setup</strong> → <strong>Agentforce Agents</strong>, turn <strong>Agentforce</strong> <span class="status-on">ON</span>, and refresh the page.</p>
                                 </div>
-                                <ol class="numbered-steps">
-                                    <li>Open <strong>Agentforce (Default)</strong></li>
-                                    <li>This opens <strong>Agentforce Builder</strong> (Topics, Data, Actions, Language, Events…)</li>
-                                </ol>
                                 <div class="section-screenshot">
-                                    <img src={agentforceBuilderImage} alt="Agentforce Builder Interface"
-                                        class="screenshot-image" />
+                                    <img src={agentforceAgentSetupImage} alt="Agentforce Agent Setup" class="screenshot-image" />
                                 </div>
+                                <p>Click <strong>New Agent</strong>.</p>
+                                <div class="section-screenshot">
+                                    <img src={newAgentCreationImage} alt="New Agent Creation" class="screenshot-image" />
+                                </div>
+                                <p>On the Select an agent screen, select <strong>Agentforce Employee Agent</strong>, then click <strong>Next</strong>.</p>
+                                <p>On the Select your agent's topics screen, uncheck the <strong>General FAQ</strong> topic, then click <strong>Next</strong>.</p>
+                                <div class="section-screenshot">
+                                    <img src={uncheckGenFaqImage} alt="Uncheck General FAQ Topic" class="screenshot-image" />
+                                </div>
+                                <p>On the Customize your agent screen, keep the default values for <strong>Name</strong> and <strong>Role</strong>, and update the <strong>Company</strong> description to:</p>
+                                <div class="topic-details-grid">
+                                    <div class="topic-field full-width">
+                                        <label>Company:</label>
+                                        <span class="field-value">Connected Executive Education delivers executive training programs and manages courses, learners, and enrollments on Salesforce.</span>
+                                    </div>
+                                </div>
+                                <p>Then click <strong>Next</strong>.</p>
+                                <div class="section-screenshot">
+                                    <img src={agentDescImage} alt="Agent Description Screen" class="screenshot-image" />
+                                </div>
+                                <p>On the Select data sources (Optional) screen, skip this step and click <strong>Create</strong>.</p>
+                                <p>You're now in <strong>Agentforce Builder</strong>. It's where you'll be able to customize Agentforce for CEE's needs, using Topics, Data, Actions, Language, Events, and more.</p>
                             </div>
 
                             <!-- Step 2: Create the Topic -->
@@ -311,10 +321,7 @@
                                 <ol class="numbered-steps">
                                     <li>Click <strong>Topics</strong> in the left-hand navigation</li>
                                     <li>Click <strong>New</strong>, then click <strong>Create Topic</strong></li>
-                                    <li>When prompted "<em>What do you want this topic to do?</em>", click
-                                        <strong>Next</strong> to skip templates. Templates are fantastic out-of-the-box
-                                        Agentforce resources, but today we're going to create a custom topic.
-                                    </li>
+                                    <li>When prompted "<em>What do you want this topic to do?</em>", click <strong>Next</strong>.</li>
                                     <li>Enter the topic details:<b>Name, API Name, Classification Description, Scope, and
                                         Instructions.</b> We've provided these for you to copy and paste below.</li>
                                     <li>Click <strong>Next</strong> to continue</li>
@@ -365,47 +372,70 @@
                                     Apex actions that the agent can invoke to Search Courses, Search Students, and
                                     Search Enrollments.</p>
                                 <ol class="numbered-steps">
-                                    <li>In Agentforce Builder, still on the Agentforce (Default) agent, look for
-                                        "<strong>This Topic's Actions</strong>" under the Topic Details menu in the
-                                        left-hand Topics panel.</li>
-                                    <li>Click "<strong>New</strong>," then click "<strong>Agent Action</strong>"</li>
-                                    <li>Set <strong>Reference Action Type</strong> to <code>Apex</code></li>
-                                    <li>Set <strong>Reference Action Category</strong> to <code>Invocable Method</code>
+                                    <li>Still in Agentforce Builder, click on "<strong>Learning Management Lookup</strong>," the topic you just created.</li>
+                                    <li>Click on "<strong>This Topic's Actions</strong>" at the top of the Topic Details panel.</li>
+                                    <li>Click "<strong>New</strong>," then click "<strong>Create New Action</strong>."</li>
+                                    <li>Set <strong>Reference Action Type</strong> to <code>Apex</code>.</li>
+                                    <li>Set <strong>Reference Action Category</strong> to <code>Invocable Method</code>.</li>
+                                    <li>Select one of the available Apex actions:
+                                        <ul class="sub-list">
+                                            <li><code>Search Courses</code></li>
+                                            <li><code>Search Enrollments</code></li>
+                                            <li><code>Search Students</code></li>
+                                        </ul>
                                     </li>
-                                    <li>Select one of the available Apex actions: <code>Search Courses</code>,
-                                        <code>Search Students</code>, or <code>Search Enrollments</code>.
-                                    </li>
-                                    <li>Configure the input/output parameters and click <strong>Finish</strong></li>
-                                    <li>Repeat this process for all three Apex actions to add them to the Learning
-                                        Management Lookup topic</li>
+                                    <li>Click <strong>Next</strong>.</li>
                                 </ol>
-                                <p>After completing all three, your Topic should show <strong>3 Agent Actions</strong>.
-                                </p>
                                 <div class="section-screenshot">
                                     <img src={agentActionImage} alt="Agent Actions Configuration"
                                         class="screenshot-image" />
                                 </div>
+
+                                <h4>Configure the Search Courses action</h4>
+                                <ol class="numbered-steps">
+                                    <li>For <strong>Show loading text for this action</strong>, enter <code>Searching courses</code></li>
+                                    <li>Inputs and outputs should already be pre-populated</li>
+                                    <li>Scroll down and locate <strong>Summary of all matching courses</strong> in the Output section</li>
+                                    <li>Check <strong>Show in conversation</strong></li>
+                                    <li>Click <strong>Finish</strong></li>
+                                </ol>
+
+                                <h4>Configure the Search Enrollments action</h4>
+                                <p>Repeat the same steps:</p>
+                                <ol class="numbered-steps">
+                                    <li>Select <code>Search Enrollments</code></li>
+                                    <li>For <strong>Show loading text for this action</strong>, enter <code>Searching enrollments</code></li>
+                                    <li>Inputs and outputs should already be pre-populated</li>
+                                    <li>Scroll down and locate <strong>Summary of all matching enrollments</strong> in the Output section</li>
+                                    <li>Check <strong>Show in conversation</strong></li>
+                                    <li>Click <strong>Finish</strong></li>
+                                </ol>
+
+                                <h4>Configure the Search Students action</h4>
+                                <p>Repeat the same steps again:</p>
+                                <ol class="numbered-steps">
+                                    <li>Select <code>Search Students</code></li>
+                                    <li>For <strong>Show loading text for this action</strong>, enter <code>Searching students</code></li>
+                                    <li>Inputs and outputs should already be pre-populated</li>
+                                    <li>Scroll down and locate <strong>Summary of all matching students</strong> in the Output section</li>
+                                    <li>Check <strong>Show in conversation</strong></li>
+                                    <li>Click <strong>Finish</strong></li>
+                                </ol>
+
+                                <p>After completing all three, your Topic should show <strong>3 Agent Actions</strong>.</p>
                             </div>
 
-                            <!-- Step 4: Delete General CRM Topic -->
+                            <!-- Step 4: Test Your Agent -->
                             <div class="config-section">
                                 <div class="config-header">
                                     <span class="config-number">4</span>
-                                    <h3>Delete the "General CRM" Topic</h3>
-                                </div>
-                                <p>We don't need this topic for our agent, so we can delete it.</p>
-                                <ol class="numbered-steps">
-                                    <li>In Agentforce Builder, navigate back to <strong>Topics</strong></li>
-                                    <li>Open the <strong>General CRM</strong> topic</li>
-                                    <li>Click <strong>Delete</strong></li>
-                                </ol>
-                            </div>
-
-                            <!-- Step 5: Test Your Agent -->
-                            <div class="config-section">
-                                <div class="config-header">
-                                    <span class="config-number">5</span>
                                     <h3>You're Ready for Testing</h3>
+                                </div>
+                                <p>Now, click <strong>Activate</strong> in the top right.</p>
+                                <p>When prompted with configuration warnings, click <strong>Ignore &amp; Activate</strong> to activate your agent.</p>
+                                <div class="section-screenshot">
+                                    <img src={ignoreWarningsImage} alt="Ignore Warnings and Activate"
+                                        class="screenshot-image" />
                                 </div>
                                 <p>Great work! Your agent is ready to test and iterate on.</p>
                                 <p>Use the <strong>Conversation Preview</strong> window on the right-hand side of
@@ -534,8 +564,7 @@
                                         Search → Enrollment Search)</li>
                                     <li><strong>Regression Check</strong> — If you see any red "Fail" icons, it means
                                         the agent either hallucinated a topic or failed to trigger the correct action.
-                                        Since we deleted "General CRM" topic, your Learning Management Lookup topic
-                                        should be the clear winner</li>
+                                        Your Learning Management Lookup topic should be the clear winner for LMS-related queries</li>
                                 </ul>
                                 <div class="section-screenshot">
                                     <img src={testResultImage} alt="Test Results" class="screenshot-image" />

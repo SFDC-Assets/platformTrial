@@ -121,13 +121,24 @@ public with sharing class CourseLookupAction {
                 result.courseCode = course.Name;
                 result.resultsFound = true;
                 
-                List<String> summaryParts = new List<String>();
+                // Build detailed summary for each course
+                List<String> courseSummaries = new List<String>();
                 for (Course__c c : matches) {
-                    String title = c.Title__c != null ? c.Title__c : c.Name;
-                    String cat = c.Category__c != null ? ' [' + c.Category__c + ']' : '';
-                    summaryParts.add(title + cat);
+                    List<String> details = new List<String>();
+                    details.add('• Title: ' + (c.Title__c != null ? c.Title__c : 'N/A'));
+                    details.add('• Category: ' + (c.Category__c != null ? c.Category__c : 'N/A'));
+                    details.add('• Course Code: ' + (c.Name != null ? c.Name : 'N/A'));
+                    details.add('• Delivery Format: ' + (c.Delivery_Format__c != null ? c.Delivery_Format__c : 'N/A'));
+                    details.add('• Duration: ' + (c.Duration_Hours__c != null ? String.valueOf(c.Duration_Hours__c.intValue()) + ' hours' : 'N/A'));
+                    details.add('• Description: ' + (c.Description__c != null ? c.Description__c : 'N/A'));
+                    courseSummaries.add(String.join(details, '\n'));
                 }
-                result.resultSummary = 'Found ' + matches.size() + ' course(s): ' + String.join(summaryParts, ', ');
+                
+                if (matches.size() == 1) {
+                    result.resultSummary = 'Here are the details for the course "' + course.Title__c + '":\n' + courseSummaries[0];
+                } else {
+                    result.resultSummary = 'Found ' + matches.size() + ' courses matching "' + request.searchQuery + '":\n\n' + String.join(courseSummaries, '\n\n');
+                }
             }
             results.add(result);
         }

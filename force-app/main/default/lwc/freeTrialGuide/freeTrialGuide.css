@@ -258,12 +258,14 @@
     height: auto;
     margin: 0.5rem 0;
     display: block;
-    object-fit: cover;
+    object-fit: contain;
     border-radius: 8px;
     image-rendering: -webkit-optimize-contrast;
-    image-rendering: auto;
-    image-rendering: high-quality;
     -ms-interpolation-mode: bicubic;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    max-width: 100%;
 }
 
 .hero-tagline {
