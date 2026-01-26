@@ -13,10 +13,10 @@ sf project deploy start --manifest manifest/base-package.xml
 
 # Assign permission sets
 # echo "Assigning permission sets..."
-sf org assign permset -n ConnectedExecutiveEducationAccess || true
-sf org assign permset -n EventMonitoringPermSet || true
-sf org assign permset -n EinsteinAnalyticsPlusAdmin || true
-sf org assign permset -n EinsteinAnalyticsPlusUser || true
+sf org assign permset -n ConnectedExecutiveEducationAccess
+sf org assign permset -n EventMonitoringPermSet
+sf org assign permset -n EinsteinAnalyticsPlusAdmin
+sf org assign permset -n EinsteinAnalyticsPlusUser
 
 
 # Wait a moment for permissions to propagate
