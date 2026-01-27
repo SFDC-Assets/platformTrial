@@ -33,7 +33,7 @@ sf data tree import -p data/masterImportPlan.json
 sf demoutil user password set -p salesforce1 -g User -l User
 
 # Set user profile photo (use -g -l to target User User; skip if org has multiple matches)
-sfdx shane:user:photo -f assets/astro-profile.png -g User -l User || true
+sfdx shane:user:photo -f assets/astro-profile.png -g User -l User
 
 # Open the org
 # echo "Opening org..."
