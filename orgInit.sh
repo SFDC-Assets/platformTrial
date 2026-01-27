@@ -13,10 +13,10 @@ sf demoutil org create scratch -f config/project-scratch-def.json -d 5 -s -p flo
 sf project deploy start --source-dir force-app --wait 15
 
 # Assign permission sets (ignore duplicate-assignment errors)
-sf org assign permset -n ConnectedExecutiveEducationAccess || true
-sf org assign permset -n EventMonitoringPermSet || true
-sf org assign permset -n EinsteinAnalyticsPlusAdmin || true
-sf org assign permset -n EinsteinAnalyticsPlusUser || true
+sf org assign permset -n ConnectedExecutiveEducationAccess 
+sf org assign permset -n EventMonitoringPermSet 
+sf org assign permset -n EinsteinAnalyticsPlusAdmin 
+
 
 # Wait a moment for permissions to propagate
 # echo "Waiting for permissions to propagate..."
