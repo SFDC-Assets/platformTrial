@@ -35,6 +35,8 @@ sf demoutil user password set -p salesforce1 -g User -l User
 # Set user profile photo (use -g -l to target User User; skip if org has multiple matches)
 sfdx shane:user:photo -f assets/astro-profile.png -g User -l User
 
+sf apex run -f SetupScripting/resetPassword.cls
+
 # Open the org
 # echo "Opening org..."
 sf org open -p lightning/n/Free_Trial_Guide
