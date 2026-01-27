@@ -11,13 +11,11 @@ sf demoutil org create scratch -f config/project-scratch-def.json -d 5 -s -p flo
 # echo "Deploying metadata (excluding Wave)..."
 sf project deploy start --manifest manifest/base-package.xml
 
-# Assign permission sets
-# echo "Assigning permission sets..."
-sf org assign permset -n ConnectedExecutiveEducationAccess
-sf org assign permset -n EventMonitoringPermSet
-sf org assign permset -n EinsteinAnalyticsPlusAdmin
-sf org assign permset -n EinsteinAnalyticsPlusUser
-
+# Assign permission sets (ignore duplicate-assignment errors)
+sf org assign permset -n ConnectedExecutiveEducationAccess || true
+sf org assign permset -n EventMonitoringPermSet || true
+sf org assign permset -n EinsteinAnalyticsPlusAdmin || true
+sf org assign permset -n EinsteinAnalyticsPlusUser || true
 
 # Wait a moment for permissions to propagate
 # echo "Waiting for permissions to propagate..."
@@ -33,8 +31,8 @@ sf data tree import -p data/masterImportPlan.json
 
 sf demoutil user password set -p salesforce1 -g User -l User
 
-# Set user profile photo
-sfdx shane:user:photo -f assets/astro-profile.png -l User
+# Set user profile photo (use -g -l to target User User; skip if org has multiple matches)
+sfdx shane:user:photo -f assets/astro-profile.png -g User -l User || true
 
 # Open the org
 # echo "Opening org..."
