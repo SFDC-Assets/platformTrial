@@ -7,9 +7,10 @@
 sf demoutil org create scratch -f config/project-scratch-def.json -d 5 -s -p flow -e platformfreetrial.demo
 #sf org create scratch --definition-file config/project-scratch-def.json --duration-days 30 --target-dev-hub alm_demo_hub_org_2 --set-default --alias cee-scratch-11
 
-# Deploy everything except Wave (Wave needs permissions first)
+# Deploy everything except Wave (Wave needs permissions first).
+# Use source-dir deploy with --wait to avoid intermittent "Missing message metadata.transfer:Finalizing for locale en_US" errors seen with manifest deploy.
 # echo "Deploying metadata (excluding Wave)..."
-sf project deploy start --manifest manifest/base-package.xml
+sf project deploy start --source-dir force-app --wait 15
 
 # Assign permission sets (ignore duplicate-assignment errors)
 sf org assign permset -n ConnectedExecutiveEducationAccess || true

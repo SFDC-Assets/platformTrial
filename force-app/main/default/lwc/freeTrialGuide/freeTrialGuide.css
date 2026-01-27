@@ -472,6 +472,12 @@
     margin: 0;
 }
 
+.step-meta {
+    font-size: 0.9rem;
+    color: #706e6b;
+    margin: 0.25rem 0 0;
+}
+
 /* Instruction Panel */
 .instruction-panel {
     width: 100%;
