@@ -27,9 +27,9 @@ import VIBES_LOADING_IMAGE from '@salesforce/resourceUrl/vibesloading';
 import VIBES_ENABLE_BUILD_IMAGE from '@salesforce/resourceUrl/vibesenablebuild';
 import RETRIEVE_METADATA_IMAGE from '@salesforce/resourceUrl/retrievemetadata';
 import TEST_RUN_IMAGE from '@salesforce/resourceUrl/test_run';
-import AGENTBUILDER_BATCH_TEST_IMAGE from '@salesforce/resourceUrl/agentbuilder_batch_test';
-import TEST_CASE_CREATION_IN_PROGRESS_IMAGE from '@salesforce/resourceUrl/test_case_creation_in_progress';
-import NEW_TEST_CREATION_TEST_CASE_IMAGE from '@salesforce/resourceUrl/new_test_creation_test_case';
+import AGENTBUILDER_BATCH_TEST_IMAGE from '@salesforce/resourceUrl/OpenBatchTest';
+import TEST_CASE_CREATION_IN_PROGRESS_IMAGE from '@salesforce/resourceUrl/TestExec';
+import NEW_TEST_CREATION_TEST_CASE_IMAGE from '@salesforce/resourceUrl/TestCreation';
 import NEW_TEST_CREATION_LNDING_IMAGE from '@salesforce/resourceUrl/new_test_creation_lnding';
 // import NEW_TEST_CREATION_2_IMAGE from '@salesforce/resourceUrl/new_test_creation_2'; // Excluded - exceeds 5MB limit
 import NEW_TEST_CREATION_3_IMAGE from '@salesforce/resourceUrl/new_test_creation_3';
@@ -49,6 +49,10 @@ import EMPLOYEE_AGENT_IMAGE from '@salesforce/resourceUrl/employeeagent';
 import UNCHECK_GEN_FAQ_IMAGE from '@salesforce/resourceUrl/uncheckgenfaq';
 import AGENT_DESC_IMAGE from '@salesforce/resourceUrl/agentdesc';
 import IGNORE_WARNINGS_IMAGE from '@salesforce/resourceUrl/ignorewarnings';
+import MCP_IMAGE from '@salesforce/resourceUrl/MCP';
+import MCP_2_IMAGE from '@salesforce/resourceUrl/MCP_2';
+import MCP_3_IMAGE from '@salesforce/resourceUrl/MCP_3';
+import LEARNING_MANAGEMENT_DASHBOARD_IMAGE from '@salesforce/resourceUrl/learningmanagementdashboard';
 
 export default class FreeTrialGuide extends LightningElement {
     trialHeroImage = TRIAL_HERO;
@@ -77,7 +81,6 @@ export default class FreeTrialGuide extends LightningElement {
     testRunImage = TEST_RUN_IMAGE;
     agentbuilderBatchTestImage = AGENTBUILDER_BATCH_TEST_IMAGE;
     testCaseCreationInProgressImage = TEST_CASE_CREATION_IN_PROGRESS_IMAGE;
-    newTestCreationTestCaseImage = NEW_TEST_CREATION_TEST_CASE_IMAGE;
     newTestCreationLndingImage = NEW_TEST_CREATION_LNDING_IMAGE;
     // newTestCreation2Image = NEW_TEST_CREATION_2_IMAGE; // Excluded - resource exceeds 5MB limit
     newTestCreation3Image = NEW_TEST_CREATION_3_IMAGE;
@@ -97,6 +100,10 @@ export default class FreeTrialGuide extends LightningElement {
     uncheckGenFaqImage = UNCHECK_GEN_FAQ_IMAGE;
     agentDescImage = AGENT_DESC_IMAGE;
     ignoreWarningsImage = IGNORE_WARNINGS_IMAGE;
+    mcpImage = MCP_IMAGE;
+    mcp2Image = MCP_2_IMAGE;
+    mcp3Image = MCP_3_IMAGE;
+    learningManagementDashboardImage = LEARNING_MANAGEMENT_DASHBOARD_IMAGE;
     @track currentStep = 0;
     @track isLoading = false;
     @track userName;
