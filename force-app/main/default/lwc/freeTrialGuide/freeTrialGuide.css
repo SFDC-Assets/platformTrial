@@ -473,9 +473,15 @@
 }
 
 .step-meta {
-    font-size: 0.9rem;
-    color: #706e6b;
-    margin: 0.25rem 0 0;
+    display: inline-block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #143b58;
+    margin: 0.5rem 0 0;
+    padding: 0.35rem 0.75rem;
+    background: rgba(20, 59, 88, 0.08);
+    border-radius: 6px;
+    border-left: 3px solid #ba8b2d;
 }
 
 /* Instruction Panel */
@@ -671,6 +677,31 @@
     display: block;
 }
 
+.screenshot-image.mcp-size {
+    max-width: 100%;
+    width: 100%;
+}
+
+.mcp-images-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin: 1.25rem 0;
+    align-items: flex-start;
+}
+
+.mcp-images-row .mcp-screenshot {
+    flex: 1 1 30%;
+    min-width: 180px;
+    margin: 0;
+}
+
+@media (max-width: 640px) {
+    .mcp-images-row .mcp-screenshot {
+        flex: 1 1 100%;
+    }
+}
+
 /* Action Box */
 .action-box {
     background: linear-gradient(135deg, rgba(20, 59, 88, 0.08) 0%, rgba(20, 59, 88, 0.04) 100%);
@@ -736,10 +767,6 @@
     margin-bottom: 0;
 }
 
-.action-box.highlight .action-list li {
-    font-size: 0.95rem;
-}
-
 .action-box p {
     margin: 0;
     font-size: 0.95rem;
@@ -795,7 +822,7 @@
     padding: 1.5rem;
     background: #f8f9fa;
     border-radius: 8px;
-    border-left: 4px solid #8B6914;
+    border-left: 4px solid #ba8b2d;
 }
 
 .intro-section p {
@@ -810,7 +837,7 @@
 }
 
 .intro-section strong {
-    color: #8B6914;
+    color: #ba8b2d;
     font-weight: 600;
 }
 
@@ -823,6 +850,13 @@
     font-weight: 600;
     color: #143b58;
     margin: 0 0 1rem;
+}
+
+.config-section h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #143b58;
+    margin: 1.25rem 0 0.5rem;
 }
 
 .config-section p {
@@ -1143,9 +1177,6 @@ code.code-block {
 
 .info-box.release-status lightning-icon {
     display: none;
-    min-height: 1.25rem;
-    border-radius: 50%;
-    background-color: #706e6b;
 }
 
 .info-box span {
@@ -1365,6 +1396,13 @@ code.code-block {
     margin: 0 0 1rem;
 }
 
+.summary-section p {
+    font-size: 0.95rem;
+    color: #444;
+    line-height: 1.6;
+    margin: 0;
+}
+
 .summary-grid {
     display: flex;
     flex-direction: column;
@@ -1477,12 +1515,12 @@ code.code-block {
 .em-section h3 {
     font-size: 1.1rem;
     font-weight: 700;
-    color: #000000;
+    color: #143b58;
     margin: 0 0 0.75rem 0;
 }
 
 .em-section .intro-text {
-    color: #333333;
+    color: #444;
 }
 
 .em-section-header {
@@ -1742,10 +1780,6 @@ code.code-block {
 
     .step-content {
         padding: 1.5rem;
-    }
-
-    .hero-title {
-        font-size: 1.75rem;
     }
 
     .feature-cards {
