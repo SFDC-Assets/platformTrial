@@ -4,8 +4,8 @@
 # Create scratch org (use default dev hub or specify with -v flag)
 # Note: Requires sourceApiVersion: "66.0" in sfdx-project.json for Wave dashboards
 # echo "Creating scratch org..."
-sf demoutil org create scratch -f config/project-scratch-def.json -d 5 -s -p flow -e platformfreetrial.demo
-#sf org create scratch --definition-file config/project-scratch-def.json --duration-days 30 --target-dev-hub alm_demo_hub_org_2 --set-default --alias cee-scratch-11
+# sf demoutil org create scratch -f config/project-scratch-def.json -d 5 -s -p flow -e platformfreetrial.demo
+sf org create scratch --definition-file config/project-scratch-def.json --duration-days 30 --target-dev-hub alm_demo_hub_org_2 --set-default --alias cee-scratch-11
 
 # Deploy everything except Wave (Wave needs permissions first).
 # Use source-dir deploy with --wait to avoid intermittent "Missing message metadata.transfer:Finalizing for locale en_US" errors seen with manifest deploy.

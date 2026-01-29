@@ -1,7 +1,9 @@
 import { LightningElement, track, wire } from 'lwc';
 import { getRecord } from 'lightning/uiRecordApi';
+import requestProvisioning from '@salesforce/apex/ScratchOrgProvisioner.requestProvisioning';
 import USER_ID from '@salesforce/user/Id';
 import USERNAME_FIELD from '@salesforce/schema/User.Username';
+import EMAIL_FIELD from '@salesforce/schema/User.Email';
 import TRIAL_HERO from '@salesforce/resourceUrl/trial_hero';
 import AGENTFORCE_BANNER from '@salesforce/resourceUrl/agentforce360_banner';
 import PLATFORM_ORG_FREE_TRIAL_IMAGE from '@salesforce/resourceUrl/platform_org_free_trial_image';
@@ -123,12 +125,18 @@ export default class FreeTrialGuide extends LightningElement {
         return String(this.currentStep);
     }
 
-    @wire(getRecord, { recordId: USER_ID, fields: [USERNAME_FIELD] })
+    @track showProvisioningModal = false;
+    @track provisioningError;
+    @track provisioningPending = false;
+    userEmail;
+
+    @wire(getRecord, { recordId: USER_ID, fields: [USERNAME_FIELD, EMAIL_FIELD] })
     wiredUser({ error, data }) {
         if (data) {
             this.userName = data.fields.Username.value;
+            this.userEmail = data.fields.Email.value;
         } else if (error) {
-            // In case of error, leave userName undefined and fail silently in the UI.
+            // In case of error, leave userName/userEmail undefined and fail silently in the UI.
             // eslint-disable-next-line no-console
             console.warn('Error loading current user record', error);
         }
@@ -136,6 +144,53 @@ export default class FreeTrialGuide extends LightningElement {
 
     get hasUserName() {
         return !!this.userName;
+    }
+
+    async handleCreateTargetOrg() {
+        this.provisioningError = null;
+        this.provisioningPending = true;
+        this.showProvisioningModal = true;
+
+        const email = this.userEmail || '';
+        try {
+            const result = await requestProvisioning({ userEmail: email });
+            this.provisioningError = result === 'OK' ? null : result;
+        } catch (e) {
+            this.provisioningError = e.body?.message || e.message || 'Request failed. Check Setup > Remote Site Settings for HostedScratch.';
+        } finally {
+            this.provisioningPending = false;
+        }
+    }
+
+    closeProvisioningModal() {
+        this.showProvisioningModal = false;
+        this.provisioningError = null;
+        this.provisioningPending = false;
+    }
+
+    handleOverlayClick(event) {
+        if (event.target === event.currentTarget) {
+            this.closeProvisioningModal();
+        }
+    }
+
+    stopPropagation(event) {
+        event.stopPropagation();
+    }
+
+    /** URL for the hosted scratch org provisioner (must match ScratchOrgProvisioner.cls). */
+    get provisioningUrl() {
+        const base = 'https://hosted-scratch.herokuapp.com/launch?template=https://github.com/SFDC-Assets/platformTrial/tree/jan26-trial-experience';
+        const email = this.userEmail || '';
+        if (email.trim()) {
+            return base + '&email=' + encodeURIComponent(email.trim());
+        }
+        return base;
+    }
+
+    /** Open the provisioner in a new tab (use when server-side call gets 302 so user can complete flow in browser). */
+    openProvisionerInNewTab() {
+        window.open(this.provisioningUrl, '_blank', 'noopener,noreferrer');
     }
 
     get trialExpiryDate() {

@@ -70,38 +70,37 @@
                         <div class="feature-cards">
                             <div class="feature-card clickable" data-step="1" onclick={handleCardClick}>
                                 <lightning-icon icon-name="standard:apps" size="medium"></lightning-icon>
-                                <h3>Step 1: Tour the App</h3>
+                                <h3>Tour the App</h3>
                                 <p>A ready-to-use Learning Management AI app built entirely on Salesforce.</p>
                                 <span class="card-link">Explore →</span>
                             </div>
                             <div class="feature-card clickable" data-step="2" onclick={handleCardClick}>
                                 <lightning-icon icon-name="standard:bot" size="medium"></lightning-icon>
-                                <h3>Step 2: Agentforce Builder</h3>
+                                <h3>Agentforce Builder</h3>
                                 <p>Configure your Agentforce. Set up agent actions and automate workflows.</p>
                                 <span class="card-link">Configure →</span>
                             </div>
                             <div class="feature-card clickable" data-step="3" onclick={handleCardClick}>
                                 <lightning-icon icon-name="standard:case" size="medium"></lightning-icon>
-                                <h3>Step 3: Test Agentforce</h3>
-                                <p>Ensure Agentforce is ready to go live by testing it thoroughly with built-in tools.
-                                </p>
+                                <h3>Test Agentforce</h3>
+                                <p>Ensure Agentforce is ready to go live by testing it thoroughly with built-in tools.</p>
                                 <span class="card-link">Test →</span>
                             </div>
                             <div class="feature-card clickable" data-step="4" onclick={handleCardClick}>
                                 <lightning-icon icon-name="standard:canvas" size="medium"></lightning-icon>
-                                <h3>Step 4: Agentforce Vibes</h3>
+                                <h3>Agentforce Vibes</h3>
                                 <p>Design and enhance app pages with AI-generated UI components.</p>
                                 <span class="card-link">Create →</span>
                             </div>
                             <div class="feature-card clickable" data-step="5" onclick={handleCardClick}>
                                 <lightning-icon icon-name="utility:upload" size="medium"></lightning-icon>
-                                <h3>Step 5: Deploy Securely</h3>
+                                <h3>Deploy Securely</h3>
                                 <p>Deploy seamlessly with built-in metadata tools.</p>
                                 <span class="card-link">Deploy →</span>
                             </div>
                             <div class="feature-card clickable" data-step="6" onclick={handleCardClick}>
                                 <lightning-icon icon-name="standard:insights" size="medium"></lightning-icon>
-                                <h3>Step 6: Event Monitoring</h3>
+                                <h3>Event Monitoring</h3>
                                 <p>Monitor events and activity.</p>
                                 <span class="card-link">Monitor →</span>
                             </div>
@@ -253,15 +252,15 @@
                                 <p>Agentforce helps you bring AI agents into your workflows and applications to improve productivity, with humans and agents working together. CEE wants to build and customize their Agentforce in order to help their team manage courses, students, and enrollments for thousands of learners. We're going to show you how to quickly and easily customize an agent for the Learning Management app.</p>
                                 <p>You may wish to keep this tab open in a separate window to follow along.</p>
                             </div>
-                            <!-- Step 1: Create an Agentforce Employee Agent and open Agentforce Builder -->
+                            <!-- Step 1: Create an Agentforce Employee Agent and Open Agentforce Builder -->
                             <div class="config-section">
                                 <div class="config-header">
                                     <span class="config-number">1</span>
-                                    <h3>Create an Agentforce Employee Agent and open Agentforce Builder</h3>
+                                    <h3>Create an Agentforce Employee Agent and Open Agentforce Builder</h3>
                                 </div>
                                 <p>Let's create an Agentforce Employee Agent and get into Agentforce Builder.</p>
                                 <p>In the upper right hand of this screen, click the gear icon to go to <strong>Setup</strong>.</p>
-                                <p>Search for <strong>"Agentforce Agents"</strong>.</p>
+                                <p>Search for <strong>"Agentforce Agents."</strong></p>
                                 <div class="preconfig-notice" style="margin-bottom: 1em;">
                                     <p><strong>Note:</strong> Go to <strong>Setup</strong> → <strong>Agentforce Agents</strong>, turn <strong>Agentforce</strong> <span class="status-on">ON</span>, and refresh the page.</p>
                                 </div>
@@ -304,9 +303,8 @@
                                     <li>Click <strong>Topics</strong> in the left-hand navigation</li>
                                     <li>Click <strong>New</strong>, then click <strong>Create Topic</strong></li>
                                     <li>When prompted "<em>What do you want this topic to do?</em>", click <strong>Next</strong> to skip this optional step.</li>
-                                    <li>Enter the topic details:<b>Name, API Name, Classification Description, Scope, and
-                                        Instructions.</b> We've provided these for you to copy and paste below.</li>
-                                    <li>Click <strong>Next</strong> to continue</li>
+                                    <li>Enter the topic details: Name, API Name, Classification Description, Scope, and Instructions. We've provided these for you to copy and paste below.</li>
+                                    <li>Click <strong>Next</strong> to continue, and then click <strong>Finish</strong></li>
                                 </ol>
 
                                 <div class="topic-details-grid">
@@ -375,6 +373,7 @@
 
                                 <h4>Configure the Search Courses action</h4>
                                 <ol class="numbered-steps">
+                                    <li>Select <code>Search Courses</code></li>
                                     <li>For <strong>Show loading text for this action</strong>, enter <code>Searching courses</code></li>
                                     <li>Inputs and outputs should already be pre-populated</li>
                                     <li>Scroll down and locate <strong>Summary of all matching courses</strong> in the Output section</li>
@@ -518,7 +517,7 @@
                                     <li>Click <strong>Run Suite</strong> in the top right</li>
                                     <li>Batch Test will simulate these user inputs against the current agent
                                         configuration in parallel</li>
-                                    <li>Wait for the status to change from <strong>In Progress</strong> to <strong>Completed</strong></li>
+                                    <li>Wait for the status to change from <strong>Running</strong> to <strong>Completed</strong></li>
                                 </ol>
                             </div>
 
@@ -666,7 +665,7 @@
                                     <li><strong>Results Integration</strong> — Returns coherent, unified output</li>
                                 </ul>
                                 <p class="intro-text">Click <strong>Manage MCP Servers</strong> to see the default
-                                    Salesforce DX MCP Server and click on the gear icon to explore the list of tools it supports—such as
+                                    Salesforce DX MCP Server and click on the gear icon to explore the list of tools it supports — such as
                                     deployment, testing, code analysis, and metadata operations.</p>
                                 <div class="mcp-images-row">
                                     <div class="section-screenshot mcp-screenshot">
@@ -687,7 +686,7 @@
                                     <span class="em-icon">🔹</span>
                                     <h3>Try a Simple Prompt</h3>
                                 </div>
-                                <p class="intro-text">Write a simple prompt to see MCP in action.</p>
+                                <p class="intro-text">Write a simple prompt to see MCP in action. (Note: this is required to complete the remaining steps!)</p>
                                 <div class="example-prompt">
                                     <p>Fetch all metadata from the org</p>
                                 </div>
@@ -746,7 +745,7 @@
                                 <p class="intro-text">Ensure the Plan/Act toggle is set back to <strong>Plan</strong>. Paste this prompt into the Agentforce chat window:</p>
                                 <div class="prompt-card">
                                     <lightning-icon icon-name="utility:chat" size="small" class="prompt-icon"></lightning-icon>
-                                    <span>Add a summary card on top of the Learning Management Dashboard so we can see course progress of completed, not started and in progress items at a glance. Make sure to keep any existing styling intact, and also make sure the new addition is according to the css styles.</span>
+                                    <span>Add a summary card on top of the Learning Management Dashboard so we can see course progress of completed, not started and in progress items at a glance. Ensure both the backend (data and getter) and the frontend (HTML that renders the cards) are in place so the summary displays. Make sure to keep any existing styling intact, and also make sure the new addition is according to the css styles.</span>
                                 </div>
                                 <div class="section-screenshot">
                                     <img src={vibesSummaryCardImage} alt="Vibes Summary Card Example" class="screenshot-image" />
@@ -771,7 +770,7 @@
                                 </div>
                                 <p class="intro-text">Once you've reviewed the Plan, switch from <strong>Plan</strong> to <strong>Act</strong>.</p>
                                 <p class="intro-text">Agentforce will then create the necessary changes and ask for approval as necessary. Vibe coding is an iterative process; in every step of the way changes are refined before getting to completion. And here we have the changes ready.</p>
-                                <p class="intro-text">Once the changes are done, we can package and deploy changes using natural language. Just select, <strong>"Yes, Implement and deploy"</strong> when prompted. Approve the API requests as they come through.</p>
+                                <p class="intro-text">Once the changes are done, we can package and deploy changes using natural language. Just select, <strong>"Yes, Implement and Deploy"</strong> when prompted. Approve the API requests as they come through.</p>
                                 <div class="section-screenshot">
                                     <img src={vibesDeploy1Image} alt="Deploy changes approval" class="screenshot-image" />
                                 </div>
@@ -842,7 +841,7 @@
                                 <p>Now that you have successfully built and verified your new app component using
                                     Agentforce Vibes, it's time to move your work from this scratch org to your target
                                     environment.</p>
-                                <p>Instead of using the command line, we will use the DX Inspector to manage this visually. This unified interface allows you to select and deploy both the structural changes and the configuration records needed to keep your application running smoothly.</p>
+                                <p>Instead of using the command line, we will use the DX Inspector to manage this process visually. This unified interface allows you to select and deploy both the structural changes and the configuration records needed to keep your application running smoothly.</p>
                             </div>
 
                             <!-- Metadata and Data Deployment -->
@@ -881,9 +880,8 @@
                                     </div>
                                     <p class="intro-text">Before deploying, you need a target org to deploy to. Create a new scratch org that will serve as your target environment for this exercise.</p>
                                     <ol class="numbered-steps">
-                                        <li>Click <a href="http://hosted-scratch.herokuapp.com/launch?template=https://github.com/SFDC-Assets/platformTrial/tree/jan26-trial-experience" target="_blank" rel="noopener noreferrer">here</a> to create a new target org (opens in a new tab)</li>
-                                        <li>Wait for the org to be created and loaded — this process takes a couple of minutes. Authentication happens automatically.</li>
-                                        <li>Keep the new target org tab open. You will use it later in the development process.</li>
+                                        <li>Click <button type="button" class="provision-link" onclick={handleCreateTargetOrg}>here</button> to create a new target org. The login credentials will be emailed to you.</li>
+                                        <li>Wait for the org to be created and loaded – this process takes a couple of minutes. You will use it later in the development process.</li>
                                     </ol>
                                     <p class="preconfig-note">This target org will receive the metadata and data you deploy from your current scratch org.</p>
                                 </div>
@@ -920,8 +918,7 @@
                                 <p class="intro-text">Access the dedicated UI for managing your deployment payload.</p>
                                 <ol class="numbered-steps">
                                     <li>From this org, not the new target org you just created, open DX Inspector by clicking the star and menu icon in the top left of your screen (you might be asked to accept the terms and proceed)</li>
-                                    <li>Navigate to the Change Management page</li>
-                                    <li>Click on the Change List tab to begin selecting items</li>
+                                    <li>From the Change List tab, we can begin selecting the items.</li>
                                 </ol>
                             </div>
 
@@ -949,13 +946,13 @@
                                     <span class="config-number">3</span>
                                     <h3>Connect to the Target Org</h3>
                                 </div>
-                                <p class="intro-text">Open your new target org that you created earlier. The login credentials are on its homepage.</p>
+                                <p class="intro-text">Open your new target org that you created earlier. You should have received an email with your login credentials.</p>
                                 <ol class="numbered-steps">
                                     <li>In the Deploy Changes window, if you don't see your target org listed under "Existing Target Org," proceed to connect to a new org.</li>
                                     <li>In the New Target Org section, enter an Environment Name (e.g., "target-org")</li>
                                     <li>Select the radio button for Sandbox or scratch org</li>
                                     <li>Click the Connect button</li>
-                                    <li>You will be redirected to the Salesforce login window. Enter your target org credentials (username and password, available on the org homepage) and log in</li>
+                                    <li>You will be redirected to the Salesforce login window. Enter your target org credentials (username and password) and log in</li>
                                     <li>If prompted with an "Allow Access?" screen, review the permissions and click Allow to grant access</li>
                                     <li>Once connected, you'll return to the Deploy Changes window with your target org now listed</li>
                                 </ol>
@@ -1008,7 +1005,7 @@
                             </div>
 
                             <!-- Data Deployment Note -->
-                            <p class="intro-text" style="margin-top: 1.5rem;">While this guide focused on moving structural metadata, the DX Inspector also supports Data Deployment (Developer Preview). This allows you to migrate the actual configuration records, like course data and relationships, required for your app to function. To explore how to preserve record relationships and map external IDs during a data migration, check out the official Salesforce documentation and try it for yourself!</p>
+                            <p class="intro-text" style="margin-top: 1.5rem;">While this guide focused on moving structural metadata, the DX Inspector also supports Data Deployment (Developer Preview). This allows you to migrate the actual configuration records, like course data and relationships, required for your app to function. To explore how to preserve record relationships and map external IDs during a data migration, check out the official Salesforce <a href="https://help.salesforce.com/s/articleView?id=platform.deploy_metadata_and_data_to_target_org.htm&amp;language=en_US&amp;type=5" target="_blank" rel="noopener noreferrer">documentation</a> and try it for yourself!</p>
 
                             <!-- Wrap Up -->
                             <div class="action-box highlight">
@@ -1017,7 +1014,6 @@
                                     <h4>Wrap-Up</h4>
                                 </div>
                                 <p>Simple deployments made easier with DX Inspector help every Salesforce builder work faster without switching between tools.</p>
-                                <br/>
                                 <p>But we all know projects aren't done after deployment! Monitoring and observability are important to ensure your org and data are secure, and that your deployments perform as intended. Click "Next" to learn more about Event Monitoring.</p>
                             </div>
 
@@ -1131,16 +1127,15 @@
                                     </div>
                                     <p>To populate anomaly dashboards with meaningful data:</p>
                                     <ol class="numbered-steps">
-                                        <li>From <strong>App Launcher</strong> (the menu to the left of Learning Management in the nav bar), search <strong>Test Threat Detection Events</strong>.</li>
+                                        <li>From <strong>App Launcher</strong> (the menu to the left of Learning Management in the nav bar), search <strong>Test Threat Detection Events</strong></li>
                                         <li>Select an <strong>Event Type</strong> (e.g., Credential Stuffing, Session
                                             Hijacking, Guest User Anomaly, Report Anomaly, API Anomaly, etc.)</li>
-                                        <li>Choose a <strong>Test User</strong>.</li>
                                         <li>Select <strong>Auto-Generated Event</strong> or <strong>Customized
-                                                Event</strong>.</li>
-                                        <li>Click <strong>Generate Test Event</strong>.</li>
+                                                Event</strong></li>
+                                        <li>Click <strong>Generate Test Event</strong></li>
                                     </ol>
                                     <p class="preconfig-note">These test events will appear in the Threat Detection
-                                        Event list and show up in the dashboards for demo and validation.</p>
+                                        Event list and show up in the dashboards for demo and validation</p>
                                     <div class="section-screenshot">
                                         <img src={testThreatEventsImage} alt="Test Threat Detection Events"
                                             class="screenshot-image" />
@@ -1356,22 +1351,19 @@
                                     <li>You configured Agentforce with custom topics and actions in Agentforce Builder</li>
                                     <li>You tested Agentforce with AI-generated test suites in Agentforce Testing Center</li>
                                     <li>You customized the application UI with Agentforce Vibes</li>
-                                    <li>You deployed those changes securely using metadata tools from DX Inspector</li>
+                                    <li>You deployed those changes securely using metadata tools from the DX Inspector</li>
                                     <li>You monitored events and org activity after deployment to keep your org and data secure</li>
                                 </ul>
                             </div>
 
-                            <div class="summary-section">
-                                <h3>What Happens Next?</h3>
-                                <p>Your trial will expire <strong>30</strong> days after you signed up. If you'd like to reach out to a Salesforce account executive to learn more about any of these features, click here to submit a <a href="https://www.salesforce.com/form/contact/contactme/" target="_blank"><strong>Contact Me</strong></a> request.</p>
-                            </div>
+                            <h3 class="what-happens-next-heading">What Happens Next?</h3>
 
                             <div class="action-box highlight">
                                 <div class="action-box-header">
                                     <lightning-icon icon-name="utility:knowledge_base" size="small"></lightning-icon>
                                     <h4>Continue Learning About the Agentforce 36O Platform</h4>
                                 </div>
-                                <p>Visit <a href="https://www.salesforce.com/platform" target="_blank">salesforce.com/platform</a> to read more about the deeply unified Agentforce 36O Platform, watch demos, and find more resources.</p>
+                                <p>Visit <a href="https://www.salesforce.com/platform" target="_blank" rel="noopener noreferrer">salesforce.com/platform</a> to read more about the deeply unified Agentforce 36O Platform, watch demos, and find more resources.</p>
                             </div>
 
                             <div class="action-box highlight">
@@ -1379,7 +1371,7 @@
                                     <lightning-icon icon-name="utility:call" size="small"></lightning-icon>
                                     <h4>Speak with Our Sales Team</h4>
                                 </div>
-                                <p>Click here to submit a <a href="https://www.salesforce.com/form/contact/contactme/" target="_blank"><strong>Contact Me</strong></a> request, and a Salesforce specialist will reach out.</p>
+                                <p>Click here to submit a <a href="https://www.salesforce.com/form/contact/contactme/" target="_blank" rel="noopener noreferrer"><strong>Contact Me</strong></a> request, and a Salesforce specialist will reach out.</p>
                             </div>
 
                             <div class="action-box highlight">
@@ -1389,7 +1381,6 @@
                                 </div>
                                 <p>If you're interested in more development and security tools on Salesforce, check out these product demos.</p>
                                 <ul class="demo-list">
-                                    <li>Agentforce 36O Platform: Development and Security Demo</li>
                                     <li><a href="https://www.salesforce.com/form/demo/platform-shield-demo/?d=pb" target="_blank" rel="noopener noreferrer">Salesforce Shield</a></li>
                                     <li><a href="https://www.salesforce.com/form/demo/platform-security-center-demo-form/?d=pb" target="_blank" rel="noopener noreferrer">Security Center</a></li>
                                     <li><a href="https://www.salesforce.com/form/demo/platform-privacy-center-demo-form/?d=pb" target="_blank" rel="noopener noreferrer">Privacy Center</a></li>
@@ -1406,7 +1397,7 @@
                                     <lightning-icon icon-name="utility:trailhead" size="small"></lightning-icon>
                                     <h4>Continue Learning on Trailhead</h4>
                                 </div>
-                                <p>We recommend the <a href="https://trailhead.salesforce.com/content/learn/modules/starting_force_com?trailmix_creator_id=akshaypoddar&trailmix_slug=salesforce-platform-basics" target="_blank">Platform Basics trail</a> to deepen your knowledge of the tools you've explored in this trial.</p>
+                                <p>We recommend the <a href="https://trailhead.salesforce.com/content/learn/modules/starting_force_com?trailmix_creator_id=akshaypoddar&trailmix_slug=salesforce-platform-basics" target="_blank" rel="noopener noreferrer">Platform Basics trail</a> to deepen your knowledge of the tools you've explored in this trial.</p>
                             </div>
                         </div>
                     </div>
@@ -1436,6 +1427,42 @@
                         <span>Start Over</span>
                     </button>
                 </template>
+            </div>
+        </template>
+
+        <!-- Provisioning Modal: single overlay to avoid white strip from SLDS layout -->
+        <template if:true={showProvisioningModal}>
+            <div class="provisioning-overlay" role="dialog" aria-modal="true" onclick={handleOverlayClick}>
+                <div class="provisioning-dialog" role="document" onclick={stopPropagation}>
+                    <div class="modal-content-wrapper">
+                        <template if:true={provisioningPending}>
+                            <lightning-spinner alternative-text="Requesting provisioning" size="medium"></lightning-spinner>
+                            <h2 class="modal-title">Requesting provisioning…</h2>
+                            <p class="modal-message">Contacting the provisioner. This may take a few seconds.</p>
+                        </template>
+                        <template if:false={provisioningPending}>
+                            <template if:true={provisioningError}>
+                                <lightning-icon icon-name="utility:error" size="large" class="modal-icon modal-icon-error"></lightning-icon>
+                                <h2 class="modal-title">Provisioning Request Issue</h2>
+                                <p class="modal-message modal-message-error">{provisioningError}</p>
+                                <p class="modal-note">The provisioner may require a browser to complete setup. Open it in a new tab to create your target org and receive credentials by email.</p>
+                                <button type="button" class="nav-btn nav-btn-brand modal-open-tab-btn" onclick={openProvisionerInNewTab}>
+                                    <lightning-icon icon-name="utility:new_window" size="x-small"></lightning-icon>
+                                    <span>Open provisioner in new tab</span>
+                                </button>
+                            </template>
+                            <template if:false={provisioningError}>
+                                <lightning-icon icon-name="utility:email" size="large" class="modal-icon"></lightning-icon>
+                                <h2 class="modal-title">Your Org is Being Provisioned</h2>
+                                <p class="modal-message">Your new target org is being created. You will receive the login credentials at your registered email address shortly.</p>
+                                <p class="modal-note">This process typically takes 2-3 minutes.</p>
+                            </template>
+                        </template>
+                        <button class="nav-btn nav-btn-brand modal-close-btn" onclick={closeProvisioningModal}>
+                            <span>Got it</span>
+                        </button>
+                    </div>
+                </div>
             </div>
         </template>
     </div>

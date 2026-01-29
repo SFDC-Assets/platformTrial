@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<RemoteSiteSetting xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>HostedScratch</fullName>
+    <url>https://hosted-scratch.herokuapp.com</url>
+    <isActive>true</isActive>
+    <description>Hosted Scratch Org provisioner for Free Trial Guide</description>
+</RemoteSiteSetting>
