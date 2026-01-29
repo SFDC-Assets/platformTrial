@@ -1,6 +1,6 @@
 {
   "orgName": "platform-trial",
-  "adminEmail": "snandakumar@salesforce.com",
+  "adminEmail": "platformpmm@gmail.com",
   "description": "public trial org",
   "edition": "Enterprise", 
   "features": ["EnableSetPasswordInApi", "PlatformEncryption", "CacheOnlyKeys", "EncryptionStatisticsInterval:86400", "EncryptionSyncInterval:604800", "AdditionalFieldHistory:40", "FieldAuditTrail", "DataMaskUser", "EnableSetPasswordInApi", "EventLogFile", "SecurityEventEnabled", "WavePlatform", "EinsteinAnalyticsPlus", "AnalyticsAdminPerms", "AnalyticsAppEmbedded", "DevelopmentWave", "EinsteinAnalyticsPlus", "DataProcessingEngine","Einstein1AIPlatform"],
