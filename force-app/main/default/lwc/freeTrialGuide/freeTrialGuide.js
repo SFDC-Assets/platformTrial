@@ -112,7 +112,7 @@ export default class FreeTrialGuide extends LightningElement {
 
     steps = [
         { label: 'Welcome', value: '0' },
-        { label: 'Tour the App', value: '1' },
+        { label: 'Tour the Sample App', value: '1' },
         { label: 'Agentforce Builder', value: '2' },
         { label: 'Test Agentforce', value: '3' },
         { label: 'Agentforce Vibes', value: '4' },
