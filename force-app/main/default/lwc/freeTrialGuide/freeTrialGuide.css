@@ -1437,6 +1437,37 @@ code.code-block {
     margin: 0;
 }
 
+.react-setup-notice {
+    margin-top: 1.25rem;
+    background: #f0f4ff;
+    border-left: 4px solid #5a7fd6;
+    border-radius: 6px;
+    padding: 1rem 1.25rem;
+}
+
+.react-setup-notice-title {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #2e4a8a;
+    margin: 0 0 0.75rem;
+}
+
+.react-setup-steps {
+    margin: 0;
+    padding-left: 1.25rem;
+}
+
+.react-setup-steps li {
+    font-size: 0.875rem;
+    color: #3d3d3d;
+    margin-bottom: 0.6rem;
+    line-height: 1.6;
+}
+
+.react-setup-steps li:last-child {
+    margin-bottom: 0;
+}
+
 /* Navigation */
 .navigation-section {
     display: flex;
@@ -1956,5 +1987,3 @@ code.code-block {
 .modal-close-btn {
     margin-top: 0.5rem;
 }
-
-
