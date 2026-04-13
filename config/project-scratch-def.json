@@ -14,9 +14,6 @@
     },
     "einsteinGptSettings": {
           "enableEinsteinGptPlatform": true
-    },
-    "uiBundleSettings": {
-      "webAppOptIn": true
     }
   }
 }
